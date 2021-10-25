@@ -35,6 +35,12 @@ class Buku extends Controller
 		$pdf = new FPDF('p', 'mm', 'A4');
 		// membuat halaman baru
 		$pdf->AddPage();
+
+		// Logo
+		$pdf->Image('https://png.pngtree.com/template/20190316/ourmid/pngtree-books-logo-image_79143.jpg', 85, 30, 40, 40, 'JPG');
+
+		$pdf->Ln(55);
+
 		// setting jenis font yang akan digunakan
 		$pdf->SetFont('Arial', 'B', 14);
 		// mencetak string 

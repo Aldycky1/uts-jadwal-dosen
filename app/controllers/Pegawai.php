@@ -35,6 +35,12 @@ class Pegawai extends Controller
 		$pdf = new FPDF('p', 'mm', 'A4');
 		// membuat halaman baru
 		$pdf->AddPage();
+
+		// Logo
+		$pdf->Image('https://www.gadjian.com/static/images/feature_employee_data.png', 95, 30, 20, 20, 'PNG');
+
+		$pdf->Ln(45);
+
 		// setting jenis font yang akan digunakan
 		$pdf->SetFont('Arial', 'B', 14);
 		// mencetak string 
