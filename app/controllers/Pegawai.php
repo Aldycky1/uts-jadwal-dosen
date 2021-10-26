@@ -37,9 +37,11 @@ class Pegawai extends Controller
 		$pdf->AddPage();
 
 		// Logo
-		$pdf->Image('https://www.gadjian.com/static/images/feature_employee_data.png', 95, 30, 20, 20, 'PNG');
+		$pdf->Image('https://www.gadjian.com/static/images/feature_employee_data.png', 180, 10, 20, 20, 'PNG');
+		$pdf->SetFont('Arial', 'B', 14);
+		$pdf->Cell(296, 20, 'PT Perusahaan', 0, 1, 'C');
 
-		$pdf->Ln(45);
+		$pdf->Ln(10);
 
 		// setting jenis font yang akan digunakan
 		$pdf->SetFont('Arial', 'B', 14);
