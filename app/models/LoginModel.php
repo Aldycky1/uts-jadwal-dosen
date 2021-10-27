@@ -1,7 +1,8 @@
 <?php
 
-class LoginModel {
-	
+class LoginModel
+{
+
 	private $table = 'user';
 	private $db;
 
@@ -21,5 +22,4 @@ class LoginModel {
 		$data =  $this->db->single();
 		return $data;
 	}
-
 }

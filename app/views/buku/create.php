@@ -19,7 +19,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form role="form" action="<?= base_url; ?>/buku/simpanbuku" method="POST" enctype="multipart/form-data">
+        <form role="form" action="<?= base_url; ?>/buku/simpanBuku" method="POST" enctype="multipart/form-data">
           <div class="card-body">
             <div class="form-group">
               <label>Judul</label>

@@ -37,9 +37,12 @@ class Buku extends Controller
 		$pdf->AddPage();
 
 		// Logo
-		$pdf->Image('https://png.pngtree.com/template/20190316/ourmid/pngtree-books-logo-image_79143.jpg', 85, 0, 40, 40, 'JPG');
+		$pdf->Image('https://png.pngtree.com/template/20190316/ourmid/pngtree-books-logo-image_79143.jpg', 165, 10, 40, 40, 'JPG');
+		$pdf->SetFont('Arial', 'B', 14);
+		$pdf->Ln(10);
+		$pdf->Cell(160, 20, 'PT Aldy Mengoding', 0, 1, 'R');
 
-		$pdf->Ln(25);
+		$pdf->Ln(10);
 
 		// setting jenis font yang akan digunakan
 		$pdf->SetFont('Arial', 'B', 14);

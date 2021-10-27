@@ -13,26 +13,26 @@
 
     <!-- Main content -->
     <section class="content">
-<div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title"><?= $data['title']; ?></h3>
-              </div>
-              <!-- /.card-header -->
-              <!-- form start -->
-              <form role="form" action="<?= base_url; ?>/kategori/simpankategori" method="POST" enctype="multipart/form-data">
-                <div class="card-body">
-                  <div class="form-group">
-                    <label >Nama Kategori</label>
-                    <input type="text" class="form-control" placeholder="masukkan kategori..." name="nama_kategori">
-                  </div>
-                </div>
-                <!-- /.card-body -->
-
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Submit</button>
-                </div>
-              </form>
+      <div class="card card-primary">
+        <div class="card-header">
+          <h3 class="card-title"><?= $data['title']; ?></h3>
+        </div>
+        <!-- /.card-header -->
+        <!-- form start -->
+        <form role="form" action="<?= base_url; ?>/kategori/simpanKategori" method="POST" enctype="multipart/form-data">
+          <div class="card-body">
+            <div class="form-group">
+              <label>Nama Kategori</label>
+              <input type="text" class="form-control" placeholder="masukkan kategori..." name="nama_kategori">
             </div>
+          </div>
+          <!-- /.card-body -->
+
+          <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
 
 
     </section>
