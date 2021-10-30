@@ -79,6 +79,7 @@
           <th style="width: 10px">#</th>
           <th>NIP</th>
           <th>Nama</th>
+          <th>Divisi</th>
           <th>Alamat</th>
           <th>Tanggal Lahir</th>
           <th>No. HP</th>
@@ -91,6 +92,9 @@
             <td><?= $no; ?></td>
             <td><?= $row['nip']; ?></td>
             <td><?= $row['nama']; ?></td>
+            <td>
+              <div class="badge badge-warning"><?= $row['nama_divisi']; ?></div>
+            </td>
             <td><?= $row['alamat']; ?></td>
             <td><?= $row['tanggal_lahir']; ?></td>
             <td><?= $row['no_hp']; ?></td>

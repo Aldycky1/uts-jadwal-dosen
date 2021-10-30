@@ -24,6 +24,10 @@
         <form role="form" action="<?= base_url; ?>/pegawai/simpanPegawai" method="POST" enctype="multipart/form-data">
           <div class="card-body">
             <div class="form-group">
+              <label>NIP</label>
+              <input type="text" class="form-control" placeholder="masukkan nip pegawai..." name="nip">
+            </div>
+            <div class="form-group">
               <label>Nama</label>
               <input type="text" class="form-control" placeholder="masukkan nama pegawai..." name="nama">
             </div>

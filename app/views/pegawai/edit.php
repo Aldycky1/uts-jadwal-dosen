@@ -20,8 +20,12 @@
         <!-- /.card-header -->
         <!-- form start -->
         <form role="form" action="<?= base_url; ?>/pegawai/updatePegawai" method="POST" enctype="multipart/form-data">
-          <input type="hidden" name="nip" value="<?= $data['pegawai']['nip']; ?>">
+          <input type="hidden" name="id" value="<?= $data['pegawai']['id']; ?>">
           <div class="card-body">
+            <div class="form-group">
+              <label>NIP</label>
+              <input type="text" class="form-control" placeholder="masukkan nama pegawai..." name="nip" value="<?= $data['pegawai']['nip']; ?>">
+            </div>
             <div class="form-group">
               <label>Nama</label>
               <input type="text" class="form-control" placeholder="masukkan nama pegawai..." name="nama" value="<?= $data['pegawai']['nama']; ?>">

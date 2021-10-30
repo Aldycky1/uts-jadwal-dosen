@@ -48,7 +48,7 @@
             </div>
             <div class="form-group">
               <label>Harga</label>
-              <input type="text" class="form-control" placeholder="masukkan harga buku..." name="harga">
+              <input type="number" class="form-control" placeholder="masukkan harga buku..." name="harga">
             </div>
           </div>
           <!-- /.card-body -->

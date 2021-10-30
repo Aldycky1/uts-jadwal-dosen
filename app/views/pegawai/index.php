@@ -70,7 +70,7 @@
                   <td><?= $row['tanggal_lahir']; ?></td>
                   <td><?= $row['no_hp']; ?></td>
                   <td>
-                    <a href="<?= base_url; ?>/pegawai/edit/<?= $row['nip'] ?>" class="badge badge-info">Edit</a> <a href="<?= base_url; ?>/pegawai/hapus/<?= $row['nip'] ?>" class="badge badge-danger" onclick="return confirm('Hapus data?');">Hapus</a>
+                    <a href="<?= base_url; ?>/pegawai/edit/<?= $row['id'] ?>" class="badge badge-info">Edit</a> <a href="<?= base_url; ?>/pegawai/hapus/<?= $row['id'] ?>" class="badge badge-danger" onclick="return confirm('Hapus data?');">Hapus</a>
                   </td>
                 </tr>
               <?php $no++;

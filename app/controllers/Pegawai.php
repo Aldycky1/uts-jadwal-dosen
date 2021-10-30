@@ -37,9 +37,9 @@ class Pegawai extends Controller
 		$pdf->AddPage();
 
 		// Logo
-		$pdf->Image('https://www.gadjian.com/static/images/feature_employee_data.png', 180, 10, 20, 20, 'PNG');
+		$pdf->Image('https://www.gadjian.com/static/images/feature_employee_data.png', 170, 10, 20, 20, 'PNG');
 		$pdf->SetFont('Arial', 'B', 14);
-		$pdf->Cell(165, 20, 'PT Aldy Mengoding', 0, 1, 'R');
+		$pdf->Cell(155, 20, 'PT Aldy Mengoding', 0, 1, 'R');
 
 		$pdf->Ln(10);
 
@@ -52,22 +52,20 @@ class Pegawai extends Controller
 		$pdf->Cell(10, 7, '', 0, 1);
 
 		$pdf->SetFont('Arial', 'B', 10);
-		$pdf->Cell(8, 6, 'NIP', 1);
+		$pdf->Cell(30, 6, 'NIP', 1);
 		$pdf->Cell(45, 6, 'NAMA', 1);
 		$pdf->Cell(30, 6, 'DIVISI', 1);
-		$pdf->Cell(35, 6, 'ALAMAT', 1);
+		$pdf->Cell(40, 6, 'ALAMAT', 1);
 		$pdf->Cell(35, 6, 'TANGGAL_LAHIR', 1);
-		$pdf->Cell(35, 6, 'NO_HP', 1);
 		$pdf->Ln();
 		$pdf->SetFont('Arial', '', 10);
 
 		foreach ($data['pegawai'] as $row) {
-			$pdf->Cell(8, 6, $row['nip'], 1);
+			$pdf->Cell(30, 6, $row['nip'], 1);
 			$pdf->Cell(45, 6, $row['nama'], 1);
 			$pdf->Cell(30, 6, $row['nama_divisi'], 1);
-			$pdf->Cell(35, 6, $row['alamat'], 1);
+			$pdf->Cell(40, 6, $row['alamat'], 1);
 			$pdf->Cell(35, 6, $row['tanggal_lahir'], 1);
-			$pdf->Cell(35, 6, $row['no_hp'], 1);
 			$pdf->Ln();
 		}
 
@@ -84,12 +82,12 @@ class Pegawai extends Controller
 		$this->view('templates/footer');
 	}
 
-	public function edit($nip)
+	public function edit($id)
 	{
 
 		$data['title'] = 'Detail Pegawai';
 		$data['divisi'] = $this->model('DivisiModel')->getAllDivisi();
-		$data['pegawai'] = $this->model('PegawaiModel')->getPegawaiById($nip);
+		$data['pegawai'] = $this->model('PegawaiModel')->getPegawaiById($id);
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
 		$this->view('pegawai/edit', $data);
@@ -133,9 +131,9 @@ class Pegawai extends Controller
 		}
 	}
 
-	public function hapus($nip)
+	public function hapus($id)
 	{
-		if ($this->model('PegawaiModel')->deletePegawai($nip) > 0) {
+		if ($this->model('PegawaiModel')->deletePegawai($id) > 0) {
 			Flasher::setMessage('Berhasil', 'dihapus', 'success');
 			header('location: ' . base_url . '/pegawai');
 			exit;
