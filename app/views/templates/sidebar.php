@@ -68,6 +68,30 @@
               </p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="<?= base_url; ?>/matakuliah" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
+              <p>
+                Mata Kuliah
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url; ?>/ruangan" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
+              <p>
+                Ruangan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="<?= base_url; ?>/jadwal" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
+              <p>
+                Jadwal
+              </p>
+            </a>
+          </li>
           <li class="nav-header">Extra</li>
           <li class="nav-item">
             <a href="<?= base_url; ?>/about" class="nav-link">
