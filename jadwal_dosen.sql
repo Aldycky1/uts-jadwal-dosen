@@ -18,7 +18,8 @@ CREATE TABLE `dosen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `dosen` (`dosen_id`, `nama_dosen`, `alamat_dosen`, `tlp_dosen`, `pen_id`) VALUES
-(1,	'Chandra Wirawan',	'Depok, Jawa Barat',	'081200000000',	3);
+(1,	'Chandra Wirawan',	'Depok, Jawa Barat',	'081200000000',	3),
+(3,	'Aldy',	'Bekasi',	'081300000000',	3);
 
 DROP TABLE IF EXISTS `jadwal`;
 CREATE TABLE `jadwal` (
@@ -32,6 +33,9 @@ CREATE TABLE `jadwal` (
   PRIMARY KEY (`jadwal_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `jadwal` (`jadwal_id`, `hari`, `jam_id`, `dosen_id`, `kelas_id`, `matakuliah_id`, `ruangan_id`) VALUES
+(2,	'Selasa',	4,	3,	4,	3,	6),
+(3,	'Senin',	2,	1,	2,	2,	2);
 
 DROP TABLE IF EXISTS `jam_kuliah`;
 CREATE TABLE `jam_kuliah` (
@@ -41,7 +45,8 @@ CREATE TABLE `jam_kuliah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `jam_kuliah` (`jam_id`, `jamkuliah`) VALUES
-(2,	'11.05 - 11.57');
+(2,	'11.05 - 11.55'),
+(4,	'12.45 - 13.35');
 
 DROP TABLE IF EXISTS `kelas`;
 CREATE TABLE `kelas` (
@@ -54,7 +59,8 @@ CREATE TABLE `kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `kelas` (`kelas_id`, `nama_kelas`, `prodi_id`, `semester`, `tahun_akademik`) VALUES
-(2,	'MICE - A',	2,	'II',	'2020 - 2021');
+(2,	'MICE - A',	2,	'II',	'2020 - 2021'),
+(4,	'ABT - B',	7,	'V',	'2021 - 2022');
 
 DROP TABLE IF EXISTS `matakuliah`;
 CREATE TABLE `matakuliah` (
@@ -66,8 +72,8 @@ CREATE TABLE `matakuliah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `matakuliah` (`matakuliah_id`, `nama_matakuliah`, `semester`, `sks`) VALUES
-(2,	'Pengantar Teknologi Informasi',	'I',	'2'),
-(3,	'Web Design',	'V',	'2');
+(2,	'Pengantar Teknologi Informasi ',	'I',	'2'),
+(3,	'Web Design',	'VI',	'3');
 
 DROP TABLE IF EXISTS `pendidikan`;
 CREATE TABLE `pendidikan` (
@@ -92,7 +98,8 @@ INSERT INTO `prodi` (`prodi_id`, `nama_prodi`) VALUES
 (2,	'Teknik Informatika'),
 (3,	'Teknik Multimedia dan Jaringan'),
 (4,	'Teknik Multimedia Digital'),
-(5,	'Teknik Komputer dan Jaringan');
+(5,	'Teknik Komputer dan Jaringan'),
+(7,	'MICE');
 
 DROP TABLE IF EXISTS `ruangan`;
 CREATE TABLE `ruangan` (
@@ -104,7 +111,8 @@ CREATE TABLE `ruangan` (
 INSERT INTO `ruangan` (`ruangan_id`, `ruangan_nama`) VALUES
 (2,	'115'),
 (3,	'109'),
-(4,	'306');
+(4,	'306'),
+(6,	'GSG 1');
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -118,4 +126,4 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `nama`, `username`, `password`) VALUES
 (1,	'Aldycky Bagus Witjaksana',	'admin',	'21232f297a57a5a743894a0e4a801fc3');
 
--- 2021-11-08 13:39:58
+-- 2021-11-08 15:33:04
