@@ -77,27 +77,43 @@
       <thead>
         <tr>
           <th style="width: 10px">#</th>
-          <th>Judul</th>
-          <th>Penerbit</th>
-          <th>Pengarang</th>
-          <th>Tahun</th>
-          <th>Kategori</th>
-          <th>Harga</th>
+          <th>Hari</th>
+          <th>Jam</th>
+          <th>Smtr</th>
+          <th>Kelas</th>
+          <th>Matkul</th>
+          <th>SKS</th>
+          <th>Dosen</th>
+          <th>Ruangan</th>
         </tr>
       </thead>
       <tbody>
         <?php $no = 1; ?>
-        <?php foreach ($data['buku'] as $row) : ?>
+        <?php foreach ($data['jadwal'] as $row) : ?>
           <tr>
             <td><?= $no; ?></td>
-            <td><?= $row['judul']; ?></td>
-            <td><?= $row['penerbit']; ?></td>
-            <td><?= $row['pengarang']; ?></td>
-            <td><?= $row['tahun']; ?></td>
+            <td><?= $row['hari']; ?></td>
             <td>
-              <div class="badge badge-warning"><?= $row['nama_kategori']; ?></div>
+              <div class="badge badge-warning"><?= $row['jamkuliah']; ?></div>
             </td>
-            <td>IDR <?= number_format($row['harga']); ?></td>
+            <td>
+              <div class="badge badge-warning"><?= $row['semester']; ?></div>
+            </td>
+            <td>
+              <div class="badge badge-warning"><?= $row['nama_kelas']; ?></div>
+            </td>
+            <td>
+              <div class="badge badge-warning"><?= $row['nama_matakuliah']; ?></div>
+            </td>
+            <td>
+              <div class="badge badge-warning"><?= $row['sks']; ?></div>
+            </td>
+            <td>
+              <div class="badge badge-warning"><?= $row['nama_dosen']; ?></div>
+            </td>
+            <td>
+              <div class="badge badge-warning"><?= $row['ruangan_nama']; ?></div>
+            </td>
           </tr>
         <?php $no++;
         endforeach; ?>
