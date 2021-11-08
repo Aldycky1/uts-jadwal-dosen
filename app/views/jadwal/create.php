@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Halaman Kelas</h1>
+            <h1>Halaman Jadwal</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -19,29 +19,40 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form role="form" action="<?= base_url; ?>/kelas/simpanKelas" method="POST" enctype="multipart/form-data">
+        <form role="form" action="<?= base_url; ?>/jadwal/simpanJadwal" method="POST" enctype="multipart/form-data">
           <div class="card-body">
             <div class="form-group">
-              <label>Nama Kelas</label>
-              <input type="text" class="form-control" placeholder="masukkan nama kelas..." name="nama_kelas">
+              <label>Hari</label>
+              <input type="text" class="form-control" placeholder="masukkan nama jadwal..." name="hari">
             </div>
             <div class="form-group">
-              <label>Prodi</label>
-              <select class="form-control" name="prodi_id">
+              <label>Jam Kuliah</label>
+              <select class="form-control" name="jam_id">
                 <option value="">Pilih</option>
-                <?php foreach ($data['prodi'] as $row) : ?>
-                  <option value="<?= $row['prodi_id']; ?>"><?= $row['nama_prodi']; ?></option>
+                <?php foreach ($data['jam_kuliah'] as $row) : ?>
+                  <option value="<?= $row['jam_id']; ?>"><?= $row['jamkuliah']; ?></option>
                 <?php endforeach; ?>
               </select>
             </div>
             <div class="form-group">
-              <label>Semester</label>
-              <input type="text" class="form-control" placeholder="masukkan alamat kelas..." name="semester">
+              <label>Dosen</label>
+              <select class="form-control" name="dosen_id">
+                <option value="">Pilih</option>
+                <?php foreach ($data['dosen'] as $row) : ?>
+                  <option value="<?= $row['dosen_id']; ?>"><?= $row['nama_dosen']; ?></option>
+                <?php endforeach; ?>
+              </select>
             </div>
             <div class="form-group">
-              <label>Tahun Akademik</label>
-              <input type="text" class="form-control" placeholder="masukkan nomor telepon..." name="tahun_akademik">
+              <label>Kelas</label>
+              <select class="form-control" name="kelas_id">
+                <option value="">Pilih</option>
+                <?php foreach ($data['kelas'] as $row) : ?>
+                  <option value="<?= $row['kelas_id']; ?>"><?= $row['nama_kelas']; ?></option>
+                <?php endforeach; ?>
+              </select>
             </div>
+
           </div>
           <!-- /.card-body -->
 

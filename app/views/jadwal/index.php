@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Halaman Kelas</h1>
+            <h1>Halaman Jadwal</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -25,18 +25,18 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title"><?= $data['title'] ?></h3>
-          <div class="btn-group float-right"><a href="<?= base_url; ?>/kelas/tambah" class="btn float-right btn-xs btn btn-primary">Tambah Kelas</a><a href="<?= base_url; ?>/kelas/laporan" class="btn float-right btn-xs btn btn-info">Laporan Kelas</a><a href="<?= base_url; ?>/kelas/lihatlaporan" class="btn float-right btn-xs btn btn-warning">Lihat Laporan Kelas</a></div>
+          <div class="btn-group float-right"><a href="<?= base_url; ?>/jadwal/tambah" class="btn float-right btn-xs btn btn-primary">Tambah Jadwal</a><a href="<?= base_url; ?>/jadwal/laporan" class="btn float-right btn-xs btn btn-info">Laporan Jadwal</a><a href="<?= base_url; ?>/jadwal/lihatlaporan" class="btn float-right btn-xs btn btn-warning">Lihat Laporan Jadwal</a></div>
         </div>
         <div class="card-body">
 
-          <form action="<?= base_url; ?>/kelas/cari" method="post">
+          <form action="<?= base_url; ?>/jadwal/cari" method="post">
             <div class="row mb-3">
               <div class="col-lg-6">
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="" name="key">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="submit">Cari Data</button>
-                    <a class="btn btn-outline-danger" href="<?= base_url; ?>/kelas">Reset</a>
+                    <a class="btn btn-outline-danger" href="<?= base_url; ?>/jadwal">Reset</a>
                   </div>
                 </div>
 
@@ -47,26 +47,40 @@
             <thead>
               <tr>
                 <th style="width: 10px">#</th>
-                <th>Nama Kelas</th>
-                <th>Prodi</th>
-                <th>Semester</th>
-                <th>Tahun Akademik</th>
+                <th>Hari</th>
+                <th>Jam</th>
+                <th>Smtr</th>
+                <th>Kelas</th>
+                <th>Mata Kuliah</th>
+                <th>SKS</th>
+                <th>Dosen</th>
+                <th>Ruang</th>
                 <th style="width: 150px">Action</th>
               </tr>
             </thead>
             <tbody>
               <?php $no = 1; ?>
-              <?php foreach ($data['kelas'] as $row) : ?>
+              <?php foreach ($data['jadwal'] as $row) : ?>
                 <tr>
                   <td><?= $no; ?></td>
-                  <td><?= $row['nama_kelas']; ?></td>
+                  <td><?= $row['hari']; ?></td>
                   <td>
-                    <div class="badge badge-warning"><?= $row['nama_prodi']; ?></div>
+                    <div class="badge badge-warning"><?= $row['jamkuliah']; ?></div>
                   </td>
-                  <td><?= $row['semester']; ?></td>
-                  <td><?= $row['tahun_akademik']; ?></td>
                   <td>
-                    <a href="<?= base_url; ?>/kelas/edit/<?= $row['kelas_id'] ?>" class="badge badge-info">Edit</a> <a href="<?= base_url; ?>/kelas/hapus/<?= $row['kelas_id'] ?>" class="badge badge-danger" onclick="return confirm('Hapus data?');">Hapus</a>
+                    <div class="badge badge-warning"><?= $row['semester']; ?></div>
+                  </td>
+                  <td>
+                    <div class="badge badge-warning"><?= $row['nama_kelas']; ?></div>
+                  </td>
+                  <td>
+                    <div class="badge badge-warning"><?= $row['nama_matakuliah']; ?></div>
+                  </td>
+                  <td>
+                    <div class="badge badge-warning"><?= $row['ruangan_nama']; ?></div>
+                  </td>
+                  <td>
+                    <a href="<?= base_url; ?>/jadwal/edit/<?= $row['jadwal_id'] ?>" class="badge badge-info">Edit</a> <a href="<?= base_url; ?>/jadwal/hapus/<?= $row['jadwal_id'] ?>" class="badge badge-danger" onclick="return confirm('Hapus data?');">Hapus</a>
                   </td>
                 </tr>
               <?php $no++;

@@ -1,9 +1,9 @@
 <?php
 
-class DosenModel
+class MataKuliahModel
 {
 
-	private $table = 'dosen';
+	private $table = 'matakuliah';
 	private $db;
 
 	public function __construct()
@@ -11,59 +11,57 @@ class DosenModel
 		$this->db = new Database;
 	}
 
-	public function getAllDosen()
+	public function getAllMataKuliah()
 	{
-		$this->db->query("SELECT dosen.*, pendidikan.nama_pen FROM " . $this->table . " JOIN pendidikan ON pendidikan.pen_id = dosen.pen_id");
+		$this->db->query("SELECT * FROM " . $this->table);
 		return $this->db->resultSet();
 	}
 
-	public function getDosenById($id)
+	public function getMataKuliahById($id)
 	{
-		$this->db->query('SELECT * FROM ' . $this->table . ' WHERE dosen_id=:dosen_id');
-		$this->db->bind('dosen_id', $id);
+		$this->db->query('SELECT * FROM ' . $this->table . ' WHERE matakuliah_id=:matakuliah_id');
+		$this->db->bind('matakuliah_id', $id);
 		return $this->db->single();
 	}
 
-	public function tambahDosen($data)
+	public function tambahMataKuliah($data)
 	{
-		$query = "INSERT INTO dosen (nama_dosen, alamat_dosen, tlp_dosen, pen_id) VALUES(:nama_dosen, :alamat_dosen, :tlp_dosen, :pen_id)";
+		$query = "INSERT INTO matakuliah (nama_matakuliah, semester, sks) VALUES(:nama_matakuliah, :semester, :sks)";
 		$this->db->query($query);
-		$this->db->bind('nama_dosen', $data['nama_dosen']);
-		$this->db->bind('alamat_dosen', $data['alamat_dosen']);
-		$this->db->bind('tlp_dosen', $data['tlp_dosen']);
-		$this->db->bind('pen_id', $data['pen_id']);
+		$this->db->bind('nama_matakuliah', $data['nama_matakuliah']);
+		$this->db->bind('semester', $data['semester']);
+		$this->db->bind('sks', $data['sks']);
 		$this->db->execute();
 
 		return $this->db->rowCount();
 	}
 
-	public function updateDataDosen($data)
+	public function updateDataMataKuliah($data)
 	{
-		$query = "UPDATE dosen SET nama_dosen=:nama_dosen, alamat_dosen=:alamat_dosen, tlp_dosen=:tlp_dosen, pen_id=:pen_id WHERE dosen_id=:dosen_id";
+		$query = "UPDATE matakuliah SET nama_matakuliah=:nama_matakuliah, semester=:semester, sks=:sks WHERE matakuliah_id=:matakuliah_id";
 		$this->db->query($query);
-		$this->db->bind('dosen_id', $data['dosen_id']);
-		$this->db->bind('nama_dosen', $data['nama_dosen']);
-		$this->db->bind('alamat_dosen', $data['alamat_dosen']);
-		$this->db->bind('tlp_dosen', $data['tlp_dosen']);
-		$this->db->bind('pen_id', $data['pen_id']);
+		$this->db->bind('matakuliah_id', $data['matakuliah_id']);
+		$this->db->bind('nama_matakuliah', $data['nama_matakuliah']);
+		$this->db->bind('semester', $data['semester']);
+		$this->db->bind('sks', $data['sks']);
 		$this->db->execute();
 
 		return $this->db->rowCount();
 	}
 
-	public function deleteDosen($id)
+	public function deleteMataKuliah($id)
 	{
-		$this->db->query('DELETE FROM ' . $this->table . ' WHERE dosen_id=:dosen_id');
-		$this->db->bind('dosen_id', $id);
+		$this->db->query('DELETE FROM ' . $this->table . ' WHERE matakuliah_id=:matakuliah_id');
+		$this->db->bind('matakuliah_id', $id);
 		$this->db->execute();
 
 		return $this->db->rowCount();
 	}
 
-	public function cariDosen()
+	public function cariMataKuliah()
 	{
 		$key = $_POST['key'];
-		$this->db->query("SELECT * FROM " . $this->table . " WHERE nama_dosen LIKE :key");
+		$this->db->query("SELECT * FROM " . $this->table . " WHERE nama_matakuliah LIKE :key");
 		$this->db->bind('key', "%$key%");
 		return $this->db->resultSet();
 	}

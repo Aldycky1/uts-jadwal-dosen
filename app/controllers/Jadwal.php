@@ -87,7 +87,11 @@ class Jadwal extends Controller
 	{
 
 		$data['title'] = 'Detail Jadwal';
-		$data['prodi'] = $this->model('ProdiModel')->getAllProdi();
+		$data['jam_kuliah'] = $this->model('JamKuliahModel')->getAllJamKuliah();
+		$data['dosen'] = $this->model('DosenModel')->getAllDosen();
+		$data['kelas'] = $this->model('KelasModel')->getAllKelas();
+		$data['matakuliah'] = $this->model('MataKuliahModel')->getAllMataKuliah();
+		$data['ruangan'] = $this->model('RuanganModel')->getAllRuangan();
 		$data['jadwal'] = $this->model('JadwalModel')->getJadwalById($id);
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
@@ -98,7 +102,11 @@ class Jadwal extends Controller
 	public function tambah()
 	{
 		$data['title'] = 'Tambah Jadwal';
-		$data['prodi'] = $this->model('ProdiModel')->getAllProdi();
+		$data['jam_kuliah'] = $this->model('JamKuliahModel')->getAllJamKuliah();
+		$data['dosen'] = $this->model('DosenModel')->getAllDosen();
+		$data['kelas'] = $this->model('KelasModel')->getAllKelas();
+		$data['matakuliah'] = $this->model('MataKuliahModel')->getAllMataKuliah();
+		$data['ruangan'] = $this->model('RuanganModel')->getAllRuangan();
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
 		$this->view('jadwal/create', $data);
