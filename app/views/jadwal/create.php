@@ -26,7 +26,7 @@
               <input type="text" class="form-control" placeholder="masukkan nama jadwal..." name="hari">
             </div>
             <div class="form-group">
-              <label>Jam Kuliah</label>
+              <label>Jam</label>
               <select class="form-control" name="jam_id">
                 <option value="">Pilih</option>
                 <?php foreach ($data['jam_kuliah'] as $row) : ?>
@@ -34,6 +34,42 @@
                 <?php endforeach; ?>
               </select>
             </div>
+            <!-- <div class="form-group">
+              <label>Smtr</label>
+              <select class="form-control" name="kelas_id">
+                <option value="">Pilih</option>
+                <?php foreach ($data['kelas'] as $row) : ?>
+                  <option value="<?= $row['kelas_id']; ?>"><?= $row['semester']; ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div> -->
+            <div class="form-group">
+              <label>Kelas</label>
+              <select class="form-control" name="kelas_id">
+                <option value="">Pilih</option>
+                <?php foreach ($data['kelas'] as $row) : ?>
+                  <option value="<?= $row['kelas_id']; ?>"><?= $row['nama_kelas']; ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Matkul</label>
+              <select class="form-control" name="matakuliah_id">
+                <option value="">Pilih</option>
+                <?php foreach ($data['matakuliah'] as $row) : ?>
+                  <option value="<?= $row['matakuliah_id']; ?>"><?= $row['nama_matakuliah']; ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div>
+            <!-- <div class="form-group">
+              <label>SKS</label>
+              <select class="form-control" name="matakuliah_id">
+                <option value="">Pilih</option>
+                <?php foreach ($data['matakuliah'] as $row) : ?>
+                  <option value="<?= $row['matakuliah_id']; ?>"><?= $row['sks']; ?></option>
+                <?php endforeach; ?>
+              </select>
+            </div> -->
             <div class="form-group">
               <label>Dosen</label>
               <select class="form-control" name="dosen_id">
@@ -44,11 +80,11 @@
               </select>
             </div>
             <div class="form-group">
-              <label>Kelas</label>
-              <select class="form-control" name="kelas_id">
+              <label>Ruangan</label>
+              <select class="form-control" name="ruangan_id">
                 <option value="">Pilih</option>
-                <?php foreach ($data['kelas'] as $row) : ?>
-                  <option value="<?= $row['kelas_id']; ?>"><?= $row['nama_kelas']; ?></option>
+                <?php foreach ($data['ruangan'] as $row) : ?>
+                  <option value="<?= $row['ruangan_id']; ?>"><?= $row['ruangan_nama']; ?></option>
                 <?php endforeach; ?>
               </select>
             </div>

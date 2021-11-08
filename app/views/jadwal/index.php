@@ -51,10 +51,10 @@
                 <th>Jam</th>
                 <th>Smtr</th>
                 <th>Kelas</th>
-                <th>Mata Kuliah</th>
+                <th>Matkul</th>
                 <th>SKS</th>
                 <th>Dosen</th>
-                <th>Ruang</th>
+                <th>Ruangan</th>
                 <th style="width: 150px">Action</th>
               </tr>
             </thead>
@@ -75,6 +75,12 @@
                   </td>
                   <td>
                     <div class="badge badge-warning"><?= $row['nama_matakuliah']; ?></div>
+                  </td>
+                  <td>
+                    <div class="badge badge-warning"><?= $row['sks']; ?></div>
+                  </td>
+                  <td>
+                    <div class="badge badge-warning"><?= $row['nama_dosen']; ?></div>
                   </td>
                   <td>
                     <div class="badge badge-warning"><?= $row['ruangan_nama']; ?></div>

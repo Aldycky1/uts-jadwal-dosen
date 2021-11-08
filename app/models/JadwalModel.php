@@ -13,7 +13,7 @@ class JadwalModel
 
 	public function getAllJadwal()
 	{
-		$this->db->query("SELECT jadwal.*, jam_kuliah.jamkuliah, dosen.dosen_id, kelas.kelas_id, matakuliah.matakuliah_id, ruangan.ruangan_id FROM " . $this->table . " JOIN jam_kuliah ON jam_kuliah.jam_id = jadwal.jam_id" . " JOIN dosen ON dosen.dosen_id = jadwal.dosen_id" . " JOIN kelas ON kelas.kelas_id = jadwal.kelas_id" . " JOIN matakuliah ON matakuliah.matakuliah_id = jadwal.matakuliah_id" . " JOIN ruangan ON ruangan.ruangan_id = jadwal.ruangan_id");
+		$this->db->query("SELECT jadwal.*, jam_kuliah.jamkuliah, kelas.semester, kelas.nama_kelas, matakuliah.nama_matakuliah, matakuliah.sks, dosen.nama_dosen, ruangan.ruangan_nama FROM " . $this->table . " JOIN jam_kuliah ON jam_kuliah.jam_id = jadwal.jam_id" . " JOIN dosen ON dosen.dosen_id = jadwal.dosen_id" . " JOIN kelas ON kelas.kelas_id = jadwal.kelas_id" . " JOIN matakuliah ON matakuliah.matakuliah_id = jadwal.matakuliah_id" . " JOIN ruangan ON ruangan.ruangan_id = jadwal.ruangan_id");
 		return $this->db->resultSet();
 	}
 
@@ -26,10 +26,10 @@ class JadwalModel
 
 	public function tambahJadwal($data)
 	{
-		$query = "INSERT INTO jadwal (nama_jadwal, hari, dosen_id, kelas_id, matakuliah_id, ruangan_id) VALUES(:nama_jadwal, :hari, :dosen_id, :kelas_id, :matakuliah_id, :ruangan_id)";
+		$query = "INSERT INTO jadwal (hari, jam_id, dosen_id, kelas_id, matakuliah_id, ruangan_id) VALUES(:hari, :jam_id, :dosen_id, :kelas_id, :matakuliah_id, :ruangan_id)";
 		$this->db->query($query);
-		$this->db->bind('nama_jadwal', $data['nama_jadwal']);
 		$this->db->bind('hari', $data['hari']);
+		$this->db->bind('jam_id', $data['jam_id']);
 		$this->db->bind('dosen_id', $data['dosen_id']);
 		$this->db->bind('kelas_id', $data['kelas_id']);
 		$this->db->bind('matakuliah_id', $data['matakuliah_id']);
@@ -41,11 +41,11 @@ class JadwalModel
 
 	public function updateDataJadwal($data)
 	{
-		$query = "UPDATE jadwal SET nama_jadwal=:nama_jadwal, hari=:hari, dosen_id=:dosen_id, kelas_id=:kelas_id, matakuliah_id=:matakuliah_id, ruangan_id=:ruangan_id WHERE jadwal_id=:jadwal_id";
+		$query = "UPDATE jadwal SET hari=:hari, jam_id=:jam_id, dosen_id=:dosen_id, kelas_id=:kelas_id, matakuliah_id=:matakuliah_id, ruangan_id=:ruangan_id WHERE jadwal_id=:jadwal_id";
 		$this->db->query($query);
 		$this->db->bind('jadwal_id', $data['jadwal_id']);
-		$this->db->bind('nama_jadwal', $data['nama_jadwal']);
 		$this->db->bind('hari', $data['hari']);
+		$this->db->bind('jam_id', $data['jam_id']);
 		$this->db->bind('dosen_id', $data['dosen_id']);
 		$this->db->bind('kelas_id', $data['kelas_id']);
 		$this->db->bind('matakuliah_id', $data['matakuliah_id']);
