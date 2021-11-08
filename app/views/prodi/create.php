@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Halaman Kategori</h1>
+            <h1>Halaman Prodi</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -19,13 +19,11 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form role="form" action="<?= base_url; ?>/kategori/updateKategori" method="POST" enctype="multipart/form-data">
-
-          <input type="hidden" name="id" value="<?= $data['kategori']['id']; ?>">
+        <form role="form" action="<?= base_url; ?>/prodi/simpanProdi" method="POST" enctype="multipart/form-data">
           <div class="card-body">
             <div class="form-group">
-              <label>Nama Kategori</label>
-              <input type="text" class="form-control" placeholder="masukkan kategori..." name="nama_kategori" value="<?= $data['kategori']['nama_kategori']; ?>">
+              <label>Nama Prodi</label>
+              <input type="text" class="form-control" placeholder="masukkan prodi..." name="nama_prodi">
             </div>
           </div>
           <!-- /.card-body -->

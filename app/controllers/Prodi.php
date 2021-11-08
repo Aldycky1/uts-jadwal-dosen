@@ -1,6 +1,6 @@
 <?php
 
-class Divisi extends Controller
+class Prodi extends Controller
 {
 	public function __construct()
 	{
@@ -12,78 +12,78 @@ class Divisi extends Controller
 	}
 	public function index()
 	{
-		$data['title'] = 'Data Divisi';
-		$data['divisi'] = $this->model('DivisiModel')->getAllDivisi();
+		$data['title'] = 'Data Prodi';
+		$data['prodi'] = $this->model('ProdiModel')->getAllProdi();
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
-		$this->view('divisi/index', $data);
+		$this->view('prodi/index', $data);
 		$this->view('templates/footer');
 	}
 	public function cari()
 	{
-		$data['title'] = 'Data Divisi';
-		$data['divisi'] = $this->model('DivisiModel')->cariDivisi();
+		$data['title'] = 'Data Prodi';
+		$data['prodi'] = $this->model('ProdiModel')->cariProdi();
 		$data['key'] = $_POST['key'];
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
-		$this->view('divisi/index', $data);
+		$this->view('prodi/index', $data);
 		$this->view('templates/footer');
 	}
 
 	public function edit($id)
 	{
-		$data['title'] = 'Detail Divisi';
-		$data['divisi'] = $this->model('DivisiModel')->getDivisiById($id);
+		$data['title'] = 'Detail Prodi';
+		$data['prodi'] = $this->model('ProdiModel')->getProdiById($id);
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
-		$this->view('divisi/edit', $data);
+		$this->view('prodi/edit', $data);
 		$this->view('templates/footer');
 	}
 
 	public function tambah()
 	{
-		$data['title'] = 'Tambah Divisi';
+		$data['title'] = 'Tambah Prodi';
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
-		$this->view('divisi/create', $data);
+		$this->view('prodi/create', $data);
 		$this->view('templates/footer');
 	}
 
-	public function simpanDivisi()
+	public function simpanProdi()
 	{
-		if ($this->model('DivisiModel')->tambahDivisi($_POST) > 0) {
+		if ($this->model('ProdiModel')->tambahProdi($_POST) > 0) {
 			Flasher::setMessage('Berhasil', 'ditambahkan', 'success');
-			header('location: ' . base_url . '/divisi');
+			header('location: ' . base_url . '/prodi');
 			exit;
 		} else {
 			Flasher::setMessage('Gagal', 'ditambahkan', 'danger');
-			header('location: ' . base_url . '/divisi');
+			header('location: ' . base_url . '/prodi');
 			exit;
 		}
 	}
 
-	public function updateDivisi()
+	public function updateProdi()
 	{
-		if ($this->model('DivisiModel')->updateDataDivisi($_POST) > 0) {
+		if ($this->model('ProdiModel')->updateDataProdi($_POST) > 0) {
 			Flasher::setMessage('Berhasil', 'diupdate', 'success');
-			header('location: ' . base_url . '/divisi');
+			header('location: ' . base_url . '/prodi');
 			exit;
 		} else {
 			Flasher::setMessage('Gagal', 'diupdate', 'danger');
-			header('location: ' . base_url . '/divisi');
+			header('location: ' . base_url . '/prodi');
 			exit;
 		}
 	}
 
 	public function hapus($id)
 	{
-		if ($this->model('DivisiModel')->deleteDivisi($id) > 0) {
+		if ($this->model('ProdiModel')->deleteProdi($id) > 0) {
 			Flasher::setMessage('Berhasil', 'dihapus', 'success');
-			header('location: ' . base_url . '/divisi');
+			header('location: ' . base_url . '/prodi');
 			exit;
 		} else {
 			Flasher::setMessage('Gagal', 'dihapus', 'danger');
-			header('location: ' . base_url . '/divisi');
+			header('location: ' . base_url . '/prodi');
 			exit;
 		}
 	}

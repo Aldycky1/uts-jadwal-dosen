@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Halaman Divisi</h1>
+            <h1>Halaman Pendidikan</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -19,13 +19,13 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form role="form" action="<?= base_url; ?>/divisi/updateDivisi" method="POST" enctype="multipart/form-data">
+        <form role="form" action="<?= base_url; ?>/pendidikan/updatePendidikan" method="POST" enctype="multipart/form-data">
 
-          <input type="hidden" name="id" value="<?= $data['divisi']['id']; ?>">
+          <input type="hidden" name="pen_id" value="<?= $data['pendidikan']['pen_id']; ?>">
           <div class="card-body">
             <div class="form-group">
-              <label>Nama Divisi</label>
-              <input type="text" class="form-control" placeholder="masukkan divisi..." name="nama_divisi" value="<?= $data['divisi']['nama_divisi']; ?>">
+              <label>Nama Pendidikan</label>
+              <input type="text" class="form-control" placeholder="masukkan pendidikan..." name="nama_pen" value="<?= $data['pendidikan']['nama_pen']; ?>">
             </div>
           </div>
           <!-- /.card-body -->

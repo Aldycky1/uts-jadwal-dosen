@@ -29,42 +29,42 @@
           </li>
           <li class="nav-header">Data</li>
           <li class="nav-item">
-            <a href="<?= base_url; ?>/kategori" class="nav-link">
+            <a href="<?= base_url; ?>/prodi" class="nav-link">
               <i class="nav-icon fas fa-bars"></i>
               <p>
-                Kategori
+                Prodi
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?= base_url; ?>/buku" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
+            <a href="<?= base_url; ?>/pendidikan" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
               <p>
-                Buku
+                Pendidikan
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?= base_url; ?>/user" class="nav-link">
-              <i class="nav-icon fas fa-users"></i>
+            <a href="<?= base_url; ?>/jamKuliah" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
               <p>
-                User
+                Jam Kuliah
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?= base_url; ?>/divisi" class="nav-link">
-              <i class="nav-icon fas fa-building"></i>
+            <a href="<?= base_url; ?>/dosen" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
               <p>
-                Divisi
+                Dosen
               </p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="<?= base_url; ?>/pegawai" class="nav-link">
-              <i class="nav-icon fas fa-user-tie"></i>
+            <a href="<?= base_url; ?>/kelas" class="nav-link">
+              <i class="nav-icon fas fa-bars"></i>
               <p>
-                Pegawai
+                Kelas
               </p>
             </a>
           </li>

@@ -5,7 +5,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Halaman Pegawai</h1>
+            <h1>Halaman Prodi</h1>
           </div>
         </div>
       </div><!-- /.container-fluid -->
@@ -24,19 +24,18 @@
 
       <div class="card">
         <div class="card-header">
-          <h3 class="card-title"><?= $data['title'] ?></h3>
-          <div class="btn-group float-right"><a href="<?= base_url; ?>/pegawai/tambah" class="btn float-right btn-xs btn btn-primary">Tambah Pegawai</a><a href="<?= base_url; ?>/pegawai/laporan" class="btn float-right btn-xs btn btn-info">Laporan Pegawai</a><a href="<?= base_url; ?>/pegawai/lihatlaporan" class="btn float-right btn-xs btn btn-warning">Lihat Laporan Pegawai</a></div>
+          <h3 class="card-title"><?= $data['title'] ?></h3> <a href="<?= base_url; ?>/prodi/tambah" class="btn float-right btn-xs btn btn-primary">Tambah Prodi</a>
         </div>
         <div class="card-body">
 
-          <form action="<?= base_url; ?>/pegawai/cari" method="post">
+          <form action="<?= base_url; ?>/prodi/cari" method="post">
             <div class="row mb-3">
               <div class="col-lg-6">
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="" name="key">
                   <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="submit">Cari Data</button>
-                    <a class="btn btn-outline-danger" href="<?= base_url; ?>/pegawai">Reset</a>
+                    <a class="btn btn-outline-danger" href="<?= base_url; ?>/prodi">Reset</a>
                   </div>
                 </div>
 
@@ -47,30 +46,18 @@
             <thead>
               <tr>
                 <th style="width: 10px">#</th>
-                <th>NIP</th>
-                <th>Nama</th>
-                <th>Divisi</th>
-                <th>Alamat</th>
-                <th>Tanggal Lahir</th>
-                <th>No. HP</th>
+                <th>Prodi</th>
                 <th style="width: 150px">Action</th>
               </tr>
             </thead>
             <tbody>
               <?php $no = 1; ?>
-              <?php foreach ($data['pegawai'] as $row) : ?>
+              <?php foreach ($data['prodi'] as $row) : ?>
                 <tr>
                   <td><?= $no; ?></td>
-                  <td><?= $row['nip']; ?></td>
-                  <td><?= $row['nama']; ?></td>
+                  <td><?= $row['nama_prodi']; ?></td>
                   <td>
-                    <div class="badge badge-warning"><?= $row['nama_divisi']; ?></div>
-                  </td>
-                  <td><?= $row['alamat']; ?></td>
-                  <td><?= $row['tanggal_lahir']; ?></td>
-                  <td><?= $row['no_hp']; ?></td>
-                  <td>
-                    <a href="<?= base_url; ?>/pegawai/edit/<?= $row['id'] ?>" class="badge badge-info">Edit</a> <a href="<?= base_url; ?>/pegawai/hapus/<?= $row['id'] ?>" class="badge badge-danger" onclick="return confirm('Hapus data?');">Hapus</a>
+                    <a href="<?= base_url; ?>/prodi/edit/<?= $row['prodi_id'] ?>" class="badge badge-info ">Edit</a> <a href="<?= base_url; ?>/prodi/hapus/<?= $row['prodi_id'] ?>" class="badge badge-danger" onclick="return confirm('Hapus data?');">Hapus</a>
                   </td>
                 </tr>
               <?php $no++;

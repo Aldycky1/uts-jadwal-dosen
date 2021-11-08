@@ -1,6 +1,6 @@
 <?php
 
-class Kategori extends Controller
+class Pendidikan extends Controller
 {
 	public function __construct()
 	{
@@ -12,78 +12,78 @@ class Kategori extends Controller
 	}
 	public function index()
 	{
-		$data['title'] = 'Data Kategori';
-		$data['kategori'] = $this->model('KategoriModel')->getAllKategori();
+		$data['title'] = 'Data Pendidikan';
+		$data['pendidikan'] = $this->model('PendidikanModel')->getAllPendidikan();
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
-		$this->view('kategori/index', $data);
+		$this->view('pendidikan/index', $data);
 		$this->view('templates/footer');
 	}
 	public function cari()
 	{
-		$data['title'] = 'Data Kategori';
-		$data['kategori'] = $this->model('KategoriModel')->cariKategori();
+		$data['title'] = 'Data Pendidikan';
+		$data['pendidikan'] = $this->model('PendidikanModel')->cariPendidikan();
 		$data['key'] = $_POST['key'];
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
-		$this->view('kategori/index', $data);
+		$this->view('pendidikan/index', $data);
 		$this->view('templates/footer');
 	}
 
 	public function edit($id)
 	{
-		$data['title'] = 'Detail Kategori';
-		$data['kategori'] = $this->model('KategoriModel')->getKategoriById($id);
+		$data['title'] = 'Detail Pendidikan';
+		$data['pendidikan'] = $this->model('PendidikanModel')->getPendidikanById($id);
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
-		$this->view('kategori/edit', $data);
+		$this->view('pendidikan/edit', $data);
 		$this->view('templates/footer');
 	}
 
 	public function tambah()
 	{
-		$data['title'] = 'Tambah Kategori';
+		$data['title'] = 'Tambah Pendidikan';
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
-		$this->view('kategori/create', $data);
+		$this->view('pendidikan/create', $data);
 		$this->view('templates/footer');
 	}
 
-	public function simpanKategori()
+	public function simpanPendidikan()
 	{
-		if ($this->model('KategoriModel')->tambahKategori($_POST) > 0) {
+		if ($this->model('PendidikanModel')->tambahPendidikan($_POST) > 0) {
 			Flasher::setMessage('Berhasil', 'ditambahkan', 'success');
-			header('location: ' . base_url . '/kategori');
+			header('location: ' . base_url . '/pendidikan');
 			exit;
 		} else {
 			Flasher::setMessage('Gagal', 'ditambahkan', 'danger');
-			header('location: ' . base_url . '/kategori');
+			header('location: ' . base_url . '/pendidikan');
 			exit;
 		}
 	}
 
-	public function updateKategori()
+	public function updatePendidikan()
 	{
-		if ($this->model('KategoriModel')->updateDataKategori($_POST) > 0) {
+		if ($this->model('PendidikanModel')->updateDataPendidikan($_POST) > 0) {
 			Flasher::setMessage('Berhasil', 'diupdate', 'success');
-			header('location: ' . base_url . '/kategori');
+			header('location: ' . base_url . '/pendidikan');
 			exit;
 		} else {
 			Flasher::setMessage('Gagal', 'diupdate', 'danger');
-			header('location: ' . base_url . '/kategori');
+			header('location: ' . base_url . '/pendidikan');
 			exit;
 		}
 	}
 
 	public function hapus($id)
 	{
-		if ($this->model('KategoriModel')->deleteKategori($id) > 0) {
+		if ($this->model('PendidikanModel')->deletePendidikan($id) > 0) {
 			Flasher::setMessage('Berhasil', 'dihapus', 'success');
-			header('location: ' . base_url . '/kategori');
+			header('location: ' . base_url . '/pendidikan');
 			exit;
 		} else {
 			Flasher::setMessage('Gagal', 'dihapus', 'danger');
-			header('location: ' . base_url . '/kategori');
+			header('location: ' . base_url . '/pendidikan');
 			exit;
 		}
 	}
