@@ -23,7 +23,16 @@
           <div class="card-body">
             <div class="form-group">
               <label>Hari</label>
-              <input type="text" class="form-control" placeholder="masukkan hari..." name="hari">
+              <select class="form-control" name="hari">
+                <option value="">Pilih</option>
+                <option value="Senin">Senin</option>
+                <option value="Selasa">Selasa</option>
+                <option value="Rabu">Rabu</option>
+                <option value="Kamis">Kamis</option>
+                <option value="Jumat">Jumat</option>
+                <option value="Sabtu">Sabtu</option>
+                <option value="Minggu">Minggu</option>
+              </select>
             </div>
             <div class="form-group">
               <label>Jam</label>

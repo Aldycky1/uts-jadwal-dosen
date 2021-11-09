@@ -25,7 +25,15 @@
           <div class="card-body">
             <div class="form-group">
               <label>Hari</label>
-              <input type="text" class="form-control" name="hari" value="<?= $data['jadwal']['hari']; ?>">
+              <select class="form-control" name="hari">
+                <option value="Senin" <?php if ($data['jadwal']['hari'] == 'Senin') { ?> selected="selected" <?php } ?>>Senin</option>
+                <option value="Selasa" <?php if ($data['jadwal']['hari'] == 'Selasa') { ?> selected="selected" <?php } ?>>Selasa</option>
+                <option value="Rabu" <?php if ($data['jadwal']['hari'] == 'Rabu') { ?> selected="selected" <?php } ?>>Rabu</option>
+                <option value="Kamis" <?php if ($data['jadwal']['hari'] == 'Kamis') { ?> selected="selected" <?php } ?>>Kamis</option>
+                <option value="Jumat" <?php if ($data['jadwal']['hari'] == 'Jumat') { ?> selected="selected" <?php } ?>>Jumat</option>
+                <option value="Sabtu" <?php if ($data['jadwal']['hari'] == 'Sabtu') { ?> selected="selected" <?php } ?>>Sabtu</option>
+                <option value="Minggu" <?php if ($data['jadwal']['hari'] == 'Minggu') { ?> selected="selected" <?php } ?>>Minggu</option>
+              </select>
             </div>
             <div class="form-group">
               <label>Jam</label>

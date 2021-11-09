@@ -29,7 +29,16 @@
             </div>
             <div class="form-group">
               <label>Semester</label>
-              <input type="text" class="form-control" name="semester" value="<?= $data['matakuliah']['semester']; ?>">
+              <select class="form-control" name="semester">
+                <option value="I" <?php if ($data['matakuliah']['semester'] == 'I') { ?> selected="selected" <?php } ?>>I</option>
+                <option value="II" <?php if ($data['matakuliah']['semester'] == 'II') { ?> selected="selected" <?php } ?>>II</option>
+                <option value="III" <?php if ($data['matakuliah']['semester'] == 'III') { ?> selected="selected" <?php } ?>>III</option>
+                <option value="IV" <?php if ($data['matakuliah']['semester'] == 'IV') { ?> selected="selected" <?php } ?>>IV</option>
+                <option value="V" <?php if ($data['matakuliah']['semester'] == 'V') { ?> selected="selected" <?php } ?>>V</option>
+                <option value="VI" <?php if ($data['matakuliah']['semester'] == 'VI') { ?> selected="selected" <?php } ?>>VI</option>
+                <option value="VII <?php if ($data['matakuliah']['semester'] == 'VII') { ?> selected=" selected" <?php } ?>">VII</option>
+                <option value="VIII" <?php if ($data['matakuliah']['semester'] == 'VIII') { ?> selected="selected" <?php } ?>>VIII</option>
+              </select>
             </div>
             <div class="form-group">
               <label>SKS</label>

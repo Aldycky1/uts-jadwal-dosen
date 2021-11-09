@@ -27,7 +27,17 @@
             </div>
             <div class="form-group">
               <label>Semester</label>
-              <input type="text" class="form-control" placeholder="masukkan semester..." name="semester">
+              <select class="form-control" name="semester">
+                <option value="">Pilih</option>
+                <option value="I">I</option>
+                <option value="II">II</option>
+                <option value="III">III</option>
+                <option value="IV">IV</option>
+                <option value="V">V</option>
+                <option value="VI">VI</option>
+                <option value="VII">VII</option>
+                <option value="VIII">VIII</option>
+              </select>
             </div>
             <div class="form-group">
               <label>SKS</label>
