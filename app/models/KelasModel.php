@@ -63,7 +63,7 @@ class KelasModel
 	public function cariKelas()
 	{
 		$key = $_POST['key'];
-		$this->db->query("SELECT * FROM " . $this->table . " WHERE nama_kelas LIKE :key");
+		$this->db->query("SELECT kelas.*, prodi.nama_prodi FROM " . $this->table . " JOIN prodi ON prodi.prodi_id = kelas.prodi_id" . " WHERE nama_kelas LIKE :key");
 		$this->db->bind('key', "%$key%");
 		return $this->db->resultSet();
 	}

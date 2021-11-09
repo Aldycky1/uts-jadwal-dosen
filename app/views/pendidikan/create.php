@@ -22,7 +22,7 @@
         <form role="form" action="<?= base_url; ?>/pendidikan/simpanPendidikan" method="POST" enctype="multipart/form-data">
           <div class="card-body">
             <div class="form-group">
-              <label>Nama Pendidikan</label>
+              <label>Pendidikan</label>
               <input type="text" class="form-control" placeholder="masukkan pendidikan..." name="nama_pen">
             </div>
           </div>

@@ -23,15 +23,15 @@
           <div class="card-body">
             <div class="form-group">
               <label>Nama Mata Kuliah</label>
-              <input type="text" class="form-control" placeholder="masukkan nama matakuliah..." name="nama_matakuliah">
+              <input type="text" class="form-control" placeholder="masukkan nama mata kuliah..." name="nama_matakuliah">
             </div>
             <div class="form-group">
               <label>Semester</label>
-              <input type="text" class="form-control" placeholder="masukkan alamat matakuliah..." name="semester">
+              <input type="text" class="form-control" placeholder="masukkan semester..." name="semester">
             </div>
             <div class="form-group">
               <label>SKS</label>
-              <input type="text" class="form-control" placeholder="masukkan nomor telepon..." name="sks">
+              <input type="text" class="form-control" placeholder="masukkan SKS..." name="sks">
             </div>
           </div>
           <!-- /.card-body -->

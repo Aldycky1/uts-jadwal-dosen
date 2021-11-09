@@ -23,7 +23,7 @@
           <div class="card-body">
             <div class="form-group">
               <label>Hari</label>
-              <input type="text" class="form-control" placeholder="masukkan nama jadwal..." name="hari">
+              <input type="text" class="form-control" placeholder="masukkan hari..." name="hari">
             </div>
             <div class="form-group">
               <label>Jam</label>

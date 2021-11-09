@@ -25,15 +25,15 @@
           <div class="card-body">
             <div class="form-group">
               <label>Nama Dosen</label>
-              <input type="text" class="form-control" placeholder="masukkan dosen..." name="nama_dosen" value="<?= $data['dosen']['nama_dosen']; ?>">
+              <input type="text" class="form-control" name="nama_dosen" value="<?= $data['dosen']['nama_dosen']; ?>">
             </div>
             <div class="form-group">
               <label>Alamat Dosen</label>
-              <input type="text" class="form-control" placeholder="masukkan dosen..." name="alamat_dosen" value="<?= $data['dosen']['alamat_dosen']; ?>">
+              <input type="text" class="form-control" name="alamat_dosen" value="<?= $data['dosen']['alamat_dosen']; ?>">
             </div>
             <div class="form-group">
               <label>No. Telp</label>
-              <input type="text" class="form-control" placeholder="masukkan dosen..." name="tlp_dosen" value="<?= $data['dosen']['tlp_dosen']; ?>">
+              <input type="text" class="form-control" name="tlp_dosen" value="<?= $data['dosen']['tlp_dosen']; ?>">
             </div>
             <div class="form-group">
               <label>Pendidikan</label>

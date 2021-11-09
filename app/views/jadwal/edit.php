@@ -25,7 +25,7 @@
           <div class="card-body">
             <div class="form-group">
               <label>Hari</label>
-              <input type="text" class="form-control" placeholder="masukkan jadwal..." name="hari" value="<?= $data['jadwal']['hari']; ?>">
+              <input type="text" class="form-control" name="hari" value="<?= $data['jadwal']['hari']; ?>">
             </div>
             <div class="form-group">
               <label>Jam</label>

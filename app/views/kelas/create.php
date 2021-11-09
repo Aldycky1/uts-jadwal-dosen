@@ -36,11 +36,11 @@
             </div>
             <div class="form-group">
               <label>Semester</label>
-              <input type="text" class="form-control" placeholder="masukkan alamat kelas..." name="semester">
+              <input type="text" class="form-control" placeholder="masukkan semester..." name="semester">
             </div>
             <div class="form-group">
               <label>Tahun Akademik</label>
-              <input type="text" class="form-control" placeholder="masukkan nomor telepon..." name="tahun_akademik">
+              <input type="text" class="form-control" placeholder="masukkan tahun akademik..." name="tahun_akademik">
             </div>
           </div>
           <!-- /.card-body -->

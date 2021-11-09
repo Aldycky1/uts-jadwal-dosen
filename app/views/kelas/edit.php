@@ -25,7 +25,7 @@
           <div class="card-body">
             <div class="form-group">
               <label>Nama Kelas</label>
-              <input type="text" class="form-control" placeholder="masukkan kelas..." name="nama_kelas" value="<?= $data['kelas']['nama_kelas']; ?>">
+              <input type="text" class="form-control" name="nama_kelas" value="<?= $data['kelas']['nama_kelas']; ?>">
             </div>
             <div class="form-group">
               <label>Prodi</label>
@@ -40,11 +40,11 @@
             </div>
             <div class="form-group">
               <label>Semester</label>
-              <input type="text" class="form-control" placeholder="masukkan kelas..." name="semester" value="<?= $data['kelas']['semester']; ?>">
+              <input type="text" class="form-control" name="semester" value="<?= $data['kelas']['semester']; ?>">
             </div>
             <div class="form-group">
               <label>Tahun Akademik</label>
-              <input type="text" class="form-control" placeholder="masukkan kelas..." name="tahun_akademik" value="<?= $data['kelas']['tahun_akademik']; ?>">
+              <input type="text" class="form-control" name="tahun_akademik" value="<?= $data['kelas']['tahun_akademik']; ?>">
             </div>
 
           </div>

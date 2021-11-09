@@ -25,15 +25,15 @@
           <div class="card-body">
             <div class="form-group">
               <label>Nama MataKuliah</label>
-              <input type="text" class="form-control" placeholder="masukkan matakuliah..." name="nama_matakuliah" value="<?= $data['matakuliah']['nama_matakuliah']; ?>">
+              <input type="text" class="form-control" name="nama_matakuliah" value="<?= $data['matakuliah']['nama_matakuliah']; ?>">
             </div>
             <div class="form-group">
               <label>Semester</label>
-              <input type="text" class="form-control" placeholder="masukkan matakuliah..." name="semester" value="<?= $data['matakuliah']['semester']; ?>">
+              <input type="text" class="form-control" name="semester" value="<?= $data['matakuliah']['semester']; ?>">
             </div>
             <div class="form-group">
               <label>SKS</label>
-              <input type="text" class="form-control" placeholder="masukkan matakuliah..." name="sks" value="<?= $data['matakuliah']['sks']; ?>">
+              <input type="text" class="form-control" name="sks" value="<?= $data['matakuliah']['sks']; ?>">
             </div>
           </div>
           <!-- /.card-body -->

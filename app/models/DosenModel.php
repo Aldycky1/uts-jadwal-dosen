@@ -63,7 +63,7 @@ class DosenModel
 	public function cariDosen()
 	{
 		$key = $_POST['key'];
-		$this->db->query("SELECT * FROM " . $this->table . " WHERE nama_dosen LIKE :key");
+		$this->db->query("SELECT dosen.*, pendidikan.nama_pen FROM " . $this->table . " JOIN pendidikan ON pendidikan.pen_id = dosen.pen_id" . " WHERE nama_dosen LIKE :key");
 		$this->db->bind('key', "%$key%");
 		return $this->db->resultSet();
 	}

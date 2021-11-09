@@ -30,7 +30,7 @@
           <li class="nav-header">Data</li>
           <li class="nav-item">
             <a href="<?= base_url; ?>/prodi" class="nav-link">
-              <i class="nav-icon fas fa-bars"></i>
+              <i class="nav-icon fas fa-graduation-cap"></i>
               <p>
                 Prodi
               </p>
@@ -38,7 +38,7 @@
           </li>
           <li class="nav-item">
             <a href="<?= base_url; ?>/pendidikan" class="nav-link">
-              <i class="nav-icon fas fa-bars"></i>
+              <i class="nav-icon fas fa-user-graduate"></i>
               <p>
                 Pendidikan
               </p>
@@ -46,7 +46,7 @@
           </li>
           <li class="nav-item">
             <a href="<?= base_url; ?>/jamKuliah" class="nav-link">
-              <i class="nav-icon fas fa-bars"></i>
+              <i class="nav-icon fas fa-clock"></i>
               <p>
                 Jam Kuliah
               </p>
@@ -54,7 +54,7 @@
           </li>
           <li class="nav-item">
             <a href="<?= base_url; ?>/dosen" class="nav-link">
-              <i class="nav-icon fas fa-bars"></i>
+              <i class="nav-icon fas fa-chalkboard-teacher"></i>
               <p>
                 Dosen
               </p>
@@ -62,7 +62,7 @@
           </li>
           <li class="nav-item">
             <a href="<?= base_url; ?>/kelas" class="nav-link">
-              <i class="nav-icon fas fa-bars"></i>
+              <i class="nav-icon fas fa-university"></i>
               <p>
                 Kelas
               </p>
@@ -70,7 +70,7 @@
           </li>
           <li class="nav-item">
             <a href="<?= base_url; ?>/matakuliah" class="nav-link">
-              <i class="nav-icon fas fa-bars"></i>
+              <i class="nav-icon fas fa-book"></i>
               <p>
                 Mata Kuliah
               </p>
@@ -78,7 +78,7 @@
           </li>
           <li class="nav-item">
             <a href="<?= base_url; ?>/ruangan" class="nav-link">
-              <i class="nav-icon fas fa-bars"></i>
+              <i class="nav-icon fas fa-map-marker-alt"></i>
               <p>
                 Ruangan
               </p>
@@ -86,7 +86,7 @@
           </li>
           <li class="nav-item">
             <a href="<?= base_url; ?>/jadwal" class="nav-link">
-              <i class="nav-icon fas fa-bars"></i>
+              <i class="nav-icon fas fa-calendar-alt"></i>
               <p>
                 Jadwal
               </p>

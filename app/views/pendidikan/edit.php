@@ -25,7 +25,7 @@
           <div class="card-body">
             <div class="form-group">
               <label>Nama Pendidikan</label>
-              <input type="text" class="form-control" placeholder="masukkan pendidikan..." name="nama_pen" value="<?= $data['pendidikan']['nama_pen']; ?>">
+              <input type="text" class="form-control" name="nama_pen" value="<?= $data['pendidikan']['nama_pen']; ?>">
             </div>
           </div>
           <!-- /.card-body -->
