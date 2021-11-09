@@ -50,7 +50,7 @@
               </select>
             </div>
             <div class="form-group">
-              <label>Matkul</label>
+              <label>Mata Kuliah</label>
               <select class="form-control" name="matakuliah_id">
                 <option value="">Pilih</option>
                 <?php foreach ($data['matakuliah'] as $row) : ?>

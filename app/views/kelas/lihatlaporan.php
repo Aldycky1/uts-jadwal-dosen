@@ -77,27 +77,23 @@
       <thead>
         <tr>
           <th style="width: 10px">#</th>
-          <th>Judul</th>
-          <th>Penerbit</th>
-          <th>Pengarang</th>
-          <th>Tahun</th>
-          <th>Kategori</th>
-          <th>Harga</th>
+          <th>Nama Kelas</th>
+          <th>Prodi</th>
+          <th>Semester</th>
+          <th>Tahun Akademik</th>
         </tr>
       </thead>
       <tbody>
         <?php $no = 1; ?>
-        <?php foreach ($data['buku'] as $row) : ?>
+        <?php foreach ($data['kelas'] as $row) : ?>
           <tr>
             <td><?= $no; ?></td>
-            <td><?= $row['judul']; ?></td>
-            <td><?= $row['penerbit']; ?></td>
-            <td><?= $row['pengarang']; ?></td>
-            <td><?= $row['tahun']; ?></td>
+            <td><?= $row['nama_kelas']; ?></td>
             <td>
-              <div class="badge badge-warning"><?= $row['nama_kategori']; ?></div>
+              <div class="badge badge-warning"><?= $row['nama_prodi']; ?></div>
             </td>
-            <td>IDR <?= number_format($row['harga']); ?></td>
+            <td><?= $row['semester']; ?></td>
+            <td><?= $row['tahun_akademik']; ?></td>
           </tr>
         <?php $no++;
         endforeach; ?>

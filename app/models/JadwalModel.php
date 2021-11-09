@@ -13,7 +13,7 @@ class JadwalModel
 
 	public function getAllJadwal()
 	{
-		$this->db->query("SELECT jadwal.*, jam_kuliah.jamkuliah, kelas.semester, kelas.nama_kelas, matakuliah.nama_matakuliah, matakuliah.sks, dosen.nama_dosen, ruangan.ruangan_nama FROM " . $this->table . " JOIN jam_kuliah ON jam_kuliah.jam_id = jadwal.jam_id" . " JOIN dosen ON dosen.dosen_id = jadwal.dosen_id" . " JOIN kelas ON kelas.kelas_id = jadwal.kelas_id" . " JOIN matakuliah ON matakuliah.matakuliah_id = jadwal.matakuliah_id" . " JOIN ruangan ON ruangan.ruangan_id = jadwal.ruangan_id");
+		$this->db->query("SELECT jadwal.*, jam_kuliah.jamkuliah, matakuliah.semester, kelas.nama_kelas, matakuliah.nama_matakuliah, matakuliah.sks, dosen.nama_dosen, ruangan.ruangan_nama FROM " . $this->table . " JOIN jam_kuliah ON jam_kuliah.jam_id = jadwal.jam_id" . " JOIN dosen ON dosen.dosen_id = jadwal.dosen_id" . " JOIN kelas ON kelas.kelas_id = jadwal.kelas_id" . " JOIN matakuliah ON matakuliah.matakuliah_id = jadwal.matakuliah_id" . " JOIN ruangan ON ruangan.ruangan_id = jadwal.ruangan_id");
 		return $this->db->resultSet();
 	}
 

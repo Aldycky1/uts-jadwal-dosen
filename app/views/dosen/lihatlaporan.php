@@ -77,27 +77,23 @@
       <thead>
         <tr>
           <th style="width: 10px">#</th>
-          <th>Judul</th>
-          <th>Penerbit</th>
-          <th>Pengarang</th>
-          <th>Tahun</th>
-          <th>Kategori</th>
-          <th>Harga</th>
+          <th>Nama Dosen</th>
+          <th>Alamat Dosen</th>
+          <th>No. Telp</th>
+          <th>Pendidikan</th>
         </tr>
       </thead>
       <tbody>
         <?php $no = 1; ?>
-        <?php foreach ($data['buku'] as $row) : ?>
+        <?php foreach ($data['dosen'] as $row) : ?>
           <tr>
             <td><?= $no; ?></td>
-            <td><?= $row['judul']; ?></td>
-            <td><?= $row['penerbit']; ?></td>
-            <td><?= $row['pengarang']; ?></td>
-            <td><?= $row['tahun']; ?></td>
+            <td><?= $row['nama_dosen']; ?></td>
+            <td><?= $row['alamat_dosen']; ?></td>
+            <td><?= $row['tlp_dosen']; ?></td>
             <td>
-              <div class="badge badge-warning"><?= $row['nama_kategori']; ?></div>
+              <div class="badge badge-warning"><?= $row['nama_pen']; ?></div>
             </td>
-            <td>IDR <?= number_format($row['harga']); ?></td>
           </tr>
         <?php $no++;
         endforeach; ?>

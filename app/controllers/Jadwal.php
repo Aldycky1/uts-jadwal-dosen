@@ -37,17 +37,17 @@ class Jadwal extends Controller
 		$pdf->AddPage();
 
 		// Logo
-		$pdf->Image('https://png.pngtree.com/template/20190316/ourmid/pngtree-books-logo-image_79143.jpg', 205, 10, 40, 40, 'JPG');
+		$pdf->Image('https://www.graphicsprings.com/filestorage/stencils/f8886990992db06572f0afa573e75745.png?width=500&height=500', 255, 10, 40, 40, 'PNG');
 		$pdf->SetFont('Arial', 'B', 14);
 		$pdf->Ln(10);
-		$pdf->Cell(200, 20, 'PT Aldy Mengoding', 0, 1, 'R');
+		$pdf->Cell(250, 20, 'PT Aldy Mengoding', 0, 1, 'R');
 
 		$pdf->Ln(10);
 
 		// setting jenis font yang akan digunakan
 		$pdf->SetFont('Arial', 'B', 14);
 		// mencetak string 
-		$pdf->Cell(230, 7, 'LAPORAN JADWAL', 0, 1, 'C');
+		$pdf->Cell(0, 7, 'LAPORAN JADWAL', 0, 1, 'C');
 
 		// Memberikan space kebawah agar tidak terlalu rapat
 		$pdf->Cell(10, 7, '', 0, 1);
@@ -56,10 +56,10 @@ class Jadwal extends Controller
 		$pdf->Cell(25, 6, 'HARI', 1);
 		$pdf->Cell(30, 6, 'JAM', 1);
 		$pdf->Cell(20, 6, 'SMTR', 1);
-		$pdf->Cell(30, 6, 'KELAS', 1);
-		$pdf->Cell(55, 6, 'MATKUL', 1);
+		$pdf->Cell(40, 6, 'KELAS', 1);
+		$pdf->Cell(70, 6, 'MATKUL', 1);
 		$pdf->Cell(15, 6, 'SKS', 1);
-		$pdf->Cell(35, 6, 'DOSEN', 1);
+		$pdf->Cell(50, 6, 'DOSEN', 1);
 		$pdf->Cell(25, 6, 'RUANGAN', 1);
 		$pdf->Ln();
 		$pdf->SetFont('Arial', '', 10);
@@ -68,10 +68,10 @@ class Jadwal extends Controller
 			$pdf->Cell(25, 6, $row['hari'], 1);
 			$pdf->Cell(30, 6, $row['jamkuliah'], 1);
 			$pdf->Cell(20, 6, $row['semester'], 1);
-			$pdf->Cell(30, 6, $row['nama_kelas'], 1);
-			$pdf->Cell(55, 6, $row['nama_matakuliah'], 1);
+			$pdf->Cell(40, 6, $row['nama_kelas'], 1);
+			$pdf->Cell(70, 6, $row['nama_matakuliah'], 1);
 			$pdf->Cell(15, 6, $row['sks'], 1);
-			$pdf->Cell(35, 6, $row['nama_dosen'], 1);
+			$pdf->Cell(50, 6, $row['nama_dosen'], 1);
 			$pdf->Cell(25, 6, $row['ruangan_nama'], 1);
 			$pdf->Ln();
 		}

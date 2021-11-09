@@ -37,7 +37,7 @@ class Kelas extends Controller
 		$pdf->AddPage();
 
 		// Logo
-		$pdf->Image('https://png.pngtree.com/template/20190316/ourmid/pngtree-books-logo-image_79143.jpg', 165, 10, 40, 40, 'JPG');
+		$pdf->Image('https://www.graphicsprings.com/filestorage/stencils/f8886990992db06572f0afa573e75745.png?width=500&height=500', 165, 10, 40, 40, 'PNG');
 		$pdf->SetFont('Arial', 'B', 14);
 		$pdf->Ln(10);
 		$pdf->Cell(160, 20, 'PT Aldy Mengoding', 0, 1, 'R');
@@ -53,20 +53,18 @@ class Kelas extends Controller
 		$pdf->Cell(10, 7, '', 0, 1);
 
 		$pdf->SetFont('Arial', 'B', 10);
-		$pdf->Cell(85, 6, 'JUDUL', 1);
-		$pdf->Cell(30, 6, 'PENERBIT', 1);
-		$pdf->Cell(30, 6, 'PENGARANG', 1);
-		$pdf->Cell(15, 6, 'TAHUN', 1);
-		$pdf->Cell(25, 6, 'KATEGORI', 1);
+		$pdf->Cell(50, 6, 'NAMA KELAS', 1);
+		$pdf->Cell(60, 6, 'PRODI', 1);
+		$pdf->Cell(30, 6, 'SEMESTER', 1);
+		$pdf->Cell(45, 6, 'TAHUN AKADEMIK', 1);
 		$pdf->Ln();
 		$pdf->SetFont('Arial', '', 10);
 
 		foreach ($data['kelas'] as $row) {
-			$pdf->Cell(85, 6, $row['judul'], 1);
-			$pdf->Cell(30, 6, $row['penerbit'], 1);
-			$pdf->Cell(30, 6, $row['pengarang'], 1);
-			$pdf->Cell(15, 6, $row['tahun'], 1);
-			$pdf->Cell(25, 6, $row['nama_kategori'], 1);
+			$pdf->Cell(50, 6, $row['nama_kelas'], 1);
+			$pdf->Cell(60, 6, $row['nama_prodi'], 1);
+			$pdf->Cell(30, 6, $row['semester'], 1);
+			$pdf->Cell(45, 6, $row['tahun_akademik'], 1);
 			$pdf->Ln();
 		}
 
