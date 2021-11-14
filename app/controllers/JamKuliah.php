@@ -32,7 +32,7 @@ class JamKuliah extends Controller
 
 	public function edit($id)
 	{
-		$data['title'] = 'Detail JamKuliah';
+		$data['title'] = 'Detail Jam Kuliah';
 		$data['jam_kuliah'] = $this->model('JamKuliahModel')->getJamKuliahById($id);
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
@@ -42,7 +42,7 @@ class JamKuliah extends Controller
 
 	public function tambah()
 	{
-		$data['title'] = 'Tambah JamKuliah';
+		$data['title'] = 'Tambah Jam Kuliah';
 		$this->view('templates/header', $data);
 		$this->view('templates/sidebar', $data);
 		$this->view('jamKuliah/create', $data);
