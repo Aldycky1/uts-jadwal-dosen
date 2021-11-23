@@ -4,6 +4,7 @@ class ProdiModel
 {
 
 	private $table = 'prodi';
+	private $tableTransaksi = 'kelas';
 	private $db;
 
 	public function __construct()
@@ -48,6 +49,15 @@ class ProdiModel
 	public function deleteProdi($id)
 	{
 		$this->db->query('DELETE FROM ' . $this->table . ' WHERE prodi_id=:prodi_id');
+		$this->db->bind('prodi_id', $id);
+		$this->db->execute();
+
+		return $this->db->rowCount();
+	}
+
+	public function cekProdi($id)
+	{
+		$this->db->query('SELECT * FROM ' . $this->tableTransaksi . ' WHERE prodi_id=:prodi_id');
 		$this->db->bind('prodi_id', $id);
 		$this->db->execute();
 

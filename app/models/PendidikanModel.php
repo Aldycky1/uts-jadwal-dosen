@@ -4,6 +4,7 @@ class PendidikanModel
 {
 
 	private $table = 'pendidikan';
+	private $tableTransaksi = 'dosen';
 	private $db;
 
 	public function __construct()
@@ -48,6 +49,15 @@ class PendidikanModel
 	public function deletePendidikan($id)
 	{
 		$this->db->query('DELETE FROM ' . $this->table . ' WHERE pen_id=:pen_id');
+		$this->db->bind('pen_id', $id);
+		$this->db->execute();
+
+		return $this->db->rowCount();
+	}
+
+	public function cekPendidikan($id)
+	{
+		$this->db->query('SELECT * FROM ' . $this->tableTransaksi . ' WHERE pen_id=:pen_id');
 		$this->db->bind('pen_id', $id);
 		$this->db->execute();
 

@@ -4,6 +4,7 @@ class JamKuliahModel
 {
 
 	private $table = 'jam_kuliah';
+	private $tableTransaksi = 'jadwal';
 	private $db;
 
 	public function __construct()
@@ -48,6 +49,15 @@ class JamKuliahModel
 	public function deleteJamKuliah($id)
 	{
 		$this->db->query('DELETE FROM ' . $this->table . ' WHERE jam_id=:jam_id');
+		$this->db->bind('jam_id', $id);
+		$this->db->execute();
+
+		return $this->db->rowCount();
+	}
+
+	public function cekJamKuliah($id)
+	{
+		$this->db->query('SELECT * FROM ' . $this->tableTransaksi . ' WHERE jam_id=:jam_id');
 		$this->db->bind('jam_id', $id);
 		$this->db->execute();
 

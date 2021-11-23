@@ -77,14 +77,20 @@ class Ruangan extends Controller
 
 	public function hapus($id)
 	{
-		if ($this->model('RuanganModel')->deleteRuangan($id) > 0) {
-			Flasher::setMessage('Berhasil', 'dihapus', 'success');
+		if ($this->model('RuanganModel')->cekRuangan($id) > 0) {
+			Flasher::setMessage('Tidak bisa', 'dihapus', 'danger');
 			header('location: ' . base_url . '/ruangan');
 			exit;
 		} else {
-			Flasher::setMessage('Gagal', 'dihapus', 'danger');
-			header('location: ' . base_url . '/ruangan');
-			exit;
+			if ($this->model('RuanganModel')->deleteRuangan($id) > 0) {
+				Flasher::setMessage('Berhasil', 'dihapus', 'success');
+				header('location: ' . base_url . '/ruangan');
+				exit;
+			} else {
+				Flasher::setMessage('Gagal', 'dihapus', 'danger');
+				header('location: ' . base_url . '/ruangan');
+				exit;
+			}
 		}
 	}
 }

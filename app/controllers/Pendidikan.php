@@ -77,14 +77,20 @@ class Pendidikan extends Controller
 
 	public function hapus($id)
 	{
-		if ($this->model('PendidikanModel')->deletePendidikan($id) > 0) {
-			Flasher::setMessage('Berhasil', 'dihapus', 'success');
+		if ($this->model('PendidikanModel')->cekPendidikan($id) > 0) {
+			Flasher::setMessage('Tidak bisa', 'dihapus', 'danger');
 			header('location: ' . base_url . '/pendidikan');
 			exit;
 		} else {
-			Flasher::setMessage('Gagal', 'dihapus', 'danger');
-			header('location: ' . base_url . '/pendidikan');
-			exit;
+			if ($this->model('PendidikanModel')->deletePendidikan($id) > 0) {
+				Flasher::setMessage('Berhasil', 'dihapus', 'success');
+				header('location: ' . base_url . '/pendidikan');
+				exit;
+			} else {
+				Flasher::setMessage('Gagal', 'dihapus', 'danger');
+				header('location: ' . base_url . '/pendidikan');
+				exit;
+			}
 		}
 	}
 }

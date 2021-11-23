@@ -77,14 +77,20 @@ class Prodi extends Controller
 
 	public function hapus($id)
 	{
-		if ($this->model('ProdiModel')->deleteProdi($id) > 0) {
-			Flasher::setMessage('Berhasil', 'dihapus', 'success');
+		if ($this->model('ProdiModel')->cekProdi($id) > 0) {
+			Flasher::setMessage('Tidak bisa', 'dihapus', 'danger');
 			header('location: ' . base_url . '/prodi');
 			exit;
 		} else {
-			Flasher::setMessage('Gagal', 'dihapus', 'danger');
-			header('location: ' . base_url . '/prodi');
-			exit;
+			if ($this->model('ProdiModel')->deleteProdi($id) > 0) {
+				Flasher::setMessage('Berhasil', 'dihapus', 'success');
+				header('location: ' . base_url . '/prodi');
+				exit;
+			} else {
+				Flasher::setMessage('Gagal', 'dihapus', 'danger');
+				header('location: ' . base_url . '/prodi');
+				exit;
+			}
 		}
 	}
 }

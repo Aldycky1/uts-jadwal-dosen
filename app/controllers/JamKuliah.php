@@ -77,14 +77,20 @@ class JamKuliah extends Controller
 
 	public function hapus($id)
 	{
-		if ($this->model('JamKuliahModel')->deleteJamKuliah($id) > 0) {
-			Flasher::setMessage('Berhasil', 'dihapus', 'success');
+		if ($this->model('JamKuliahModel')->cekJamKuliah($id) > 0) {
+			Flasher::setMessage('Tidak bisa', 'dihapus', 'danger');
 			header('location: ' . base_url . '/jamKuliah');
 			exit;
 		} else {
-			Flasher::setMessage('Gagal', 'dihapus', 'danger');
-			header('location: ' . base_url . '/jamKuliah');
-			exit;
+			if ($this->model('JamKuliahModel')->deleteJamKuliah($id) > 0) {
+				Flasher::setMessage('Berhasil', 'dihapus', 'success');
+				header('location: ' . base_url . '/jamKuliah');
+				exit;
+			} else {
+				Flasher::setMessage('Gagal', 'dihapus', 'danger');
+				header('location: ' . base_url . '/jamKuliah');
+				exit;
+			}
 		}
 	}
 }

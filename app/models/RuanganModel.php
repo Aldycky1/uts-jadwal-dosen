@@ -4,6 +4,7 @@ class RuanganModel
 {
 
 	private $table = 'ruangan';
+	private $tableTransaksi = 'jadwal';
 	private $db;
 
 	public function __construct()
@@ -48,6 +49,15 @@ class RuanganModel
 	public function deleteRuangan($id)
 	{
 		$this->db->query('DELETE FROM ' . $this->table . ' WHERE ruangan_id=:ruangan_id');
+		$this->db->bind('ruangan_id', $id);
+		$this->db->execute();
+
+		return $this->db->rowCount();
+	}
+
+	public function cekRuangan($id)
+	{
+		$this->db->query('SELECT * FROM ' . $this->tableTransaksi . ' WHERE ruangan_id=:ruangan_id');
 		$this->db->bind('ruangan_id', $id);
 		$this->db->execute();
 

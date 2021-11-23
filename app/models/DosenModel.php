@@ -4,6 +4,7 @@ class DosenModel
 {
 
 	private $table = 'dosen';
+	private $tableTransaksi = 'jadwal';
 	private $db;
 
 	public function __construct()
@@ -54,6 +55,15 @@ class DosenModel
 	public function deleteDosen($id)
 	{
 		$this->db->query('DELETE FROM ' . $this->table . ' WHERE dosen_id=:dosen_id');
+		$this->db->bind('dosen_id', $id);
+		$this->db->execute();
+
+		return $this->db->rowCount();
+	}
+
+	public function cekDosen($id)
+	{
+		$this->db->query('SELECT * FROM ' . $this->tableTransaksi . ' WHERE dosen_id=:dosen_id');
 		$this->db->bind('dosen_id', $id);
 		$this->db->execute();
 

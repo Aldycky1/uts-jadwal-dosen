@@ -128,14 +128,20 @@ class MataKuliah extends Controller
 
 	public function hapus($id)
 	{
-		if ($this->model('MataKuliahModel')->deleteMataKuliah($id) > 0) {
-			Flasher::setMessage('Berhasil', 'dihapus', 'success');
+		if ($this->model('MataKuliahModel')->cekMataKuliah($id) > 0) {
+			Flasher::setMessage('Tidak bisa', 'dihapus', 'danger');
 			header('location: ' . base_url . '/matakuliah');
 			exit;
 		} else {
-			Flasher::setMessage('Gagal', 'dihapus', 'danger');
-			header('location: ' . base_url . '/matakuliah');
-			exit;
+			if ($this->model('MataKuliahModel')->deleteMataKuliah($id) > 0) {
+				Flasher::setMessage('Berhasil', 'dihapus', 'success');
+				header('location: ' . base_url . '/matakuliah');
+				exit;
+			} else {
+				Flasher::setMessage('Gagal', 'dihapus', 'danger');
+				header('location: ' . base_url . '/matakuliah');
+				exit;
+			}
 		}
 	}
 }

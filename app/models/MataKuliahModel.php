@@ -4,6 +4,7 @@ class MataKuliahModel
 {
 
 	private $table = 'matakuliah';
+	private $tableTransaksi = 'jadwal';
 	private $db;
 
 	public function __construct()
@@ -52,6 +53,15 @@ class MataKuliahModel
 	public function deleteMataKuliah($id)
 	{
 		$this->db->query('DELETE FROM ' . $this->table . ' WHERE matakuliah_id=:matakuliah_id');
+		$this->db->bind('matakuliah_id', $id);
+		$this->db->execute();
+
+		return $this->db->rowCount();
+	}
+
+	public function cekMataKuliah($id)
+	{
+		$this->db->query('SELECT * FROM ' . $this->tableTransaksi . ' WHERE matakuliah_id=:matakuliah_id');
 		$this->db->bind('matakuliah_id', $id);
 		$this->db->execute();
 

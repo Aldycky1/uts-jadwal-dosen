@@ -132,14 +132,20 @@ class Kelas extends Controller
 
 	public function hapus($id)
 	{
-		if ($this->model('KelasModel')->deleteKelas($id) > 0) {
-			Flasher::setMessage('Berhasil', 'dihapus', 'success');
+		if ($this->model('KelasModel')->cekKelas($id) > 0) {
+			Flasher::setMessage('Tidak bisa', 'dihapus', 'danger');
 			header('location: ' . base_url . '/kelas');
 			exit;
 		} else {
-			Flasher::setMessage('Gagal', 'dihapus', 'danger');
-			header('location: ' . base_url . '/kelas');
-			exit;
+			if ($this->model('KelasModel')->deleteKelas($id) > 0) {
+				Flasher::setMessage('Berhasil', 'dihapus', 'success');
+				header('location: ' . base_url . '/kelas');
+				exit;
+			} else {
+				Flasher::setMessage('Gagal', 'dihapus', 'danger');
+				header('location: ' . base_url . '/kelas');
+				exit;
+			}
 		}
 	}
 }
