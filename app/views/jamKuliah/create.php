@@ -22,8 +22,28 @@
         <form role="form" action="<?= base_url; ?>/jamKuliah/simpanJamKuliah" method="POST" enctype="multipart/form-data">
           <div class="card-body">
             <div class="form-group">
-              <label>Jam Kuliah</label>
-              <input type="text" class="form-control" placeholder="masukkan jam kuliah..." name="jamkuliah">
+              <label>Waktu Mulai</label>
+              <div class="input-group time" id="timepicker-1">
+                <input class="form-control" placeholder="Jam mulai" name="jam_mulai" />
+                <span class="input-group-append input-group-addon">
+                  <span class="input-group-text">
+                    <i class="fa fa-clock">
+                    </i>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Waktu Selesai</label>
+              <div class="input-group time" id="timepicker-2">
+                <input class="form-control" placeholder="Jam selesai" name="jam_selesai" />
+                <span class="input-group-append input-group-addon">
+                  <span class="input-group-text">
+                    <i class="fa fa-clock">
+                    </i>
+                  </span>
+                </span>
+              </div>
             </div>
           </div>
           <!-- /.card-body -->

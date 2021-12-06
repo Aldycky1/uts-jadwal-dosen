@@ -27,9 +27,10 @@ class JamKuliahModel
 
 	public function tambahJamKuliah($data)
 	{
-		$query = "INSERT INTO jam_kuliah (jamkuliah) VALUES(:jamkuliah)";
+		$query = "INSERT INTO jam_kuliah (jam_mulai, jam_selesai) VALUES(:jam_mulai, :jam_selesai)";
 		$this->db->query($query);
-		$this->db->bind('jamkuliah', $data['jamkuliah']);
+		$this->db->bind('jam_mulai', $data['jam_mulai']);
+		$this->db->bind('jam_selesai', $data['jam_selesai']);
 		$this->db->execute();
 
 		return $this->db->rowCount();
@@ -37,10 +38,11 @@ class JamKuliahModel
 
 	public function updateDataJamKuliah($data)
 	{
-		$query = "UPDATE jam_kuliah SET jamkuliah=:jamkuliah WHERE jam_id=:jam_id";
+		$query = "UPDATE jam_kuliah SET jam_mulai=:jam_mulai, jam_selesai=:jam_selesai WHERE jam_id=:jam_id";
 		$this->db->query($query);
 		$this->db->bind('jam_id', $data['jam_id']);
-		$this->db->bind('jamkuliah', $data['jamkuliah']);
+		$this->db->bind('jam_mulai', $data['jam_mulai']);
+		$this->db->bind('jam_selesai', $data['jam_selesai']);
 		$this->db->execute();
 
 		return $this->db->rowCount();
@@ -67,7 +69,7 @@ class JamKuliahModel
 	public function cariJamKuliah()
 	{
 		$key = $_POST['key'];
-		$this->db->query("SELECT * FROM " . $this->table . " WHERE jamkuliah LIKE :key");
+		$this->db->query("SELECT * FROM " . $this->table . " WHERE jam_mulai LIKE :key || jam_selesai LIKE :key");
 		$this->db->bind('key', "%$key%");
 		return $this->db->resultSet();
 	}

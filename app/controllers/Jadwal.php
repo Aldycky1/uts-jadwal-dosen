@@ -54,9 +54,9 @@ class Jadwal extends Controller
 
 		$pdf->SetFont('Arial', 'B', 10);
 		$pdf->Cell(25, 6, 'HARI', 1);
-		$pdf->Cell(30, 6, 'JAM', 1);
+		$pdf->Cell(40, 6, 'JAM', 1);
 		$pdf->Cell(20, 6, 'SMTR', 1);
-		$pdf->Cell(40, 6, 'KELAS', 1);
+		$pdf->Cell(30, 6, 'KELAS', 1);
 		$pdf->Cell(70, 6, 'MATKUL', 1);
 		$pdf->Cell(15, 6, 'SKS', 1);
 		$pdf->Cell(50, 6, 'DOSEN', 1);
@@ -66,9 +66,9 @@ class Jadwal extends Controller
 
 		foreach ($data['jadwal'] as $row) {
 			$pdf->Cell(25, 6, $row['hari'], 1);
-			$pdf->Cell(30, 6, $row['jamkuliah'], 1);
+			$pdf->Cell(40, 6, $row['jam_mulai'] . ' - ' . $row['jam_selesai'], 1);
 			$pdf->Cell(20, 6, $row['semester'], 1);
-			$pdf->Cell(40, 6, $row['nama_kelas'], 1);
+			$pdf->Cell(30, 6, $row['nama_kelas'], 1);
 			$pdf->Cell(70, 6, $row['nama_matakuliah'], 1);
 			$pdf->Cell(15, 6, $row['sks'], 1);
 			$pdf->Cell(50, 6, $row['nama_dosen'], 1);

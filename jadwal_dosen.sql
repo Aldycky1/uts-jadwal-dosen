@@ -18,8 +18,7 @@ CREATE TABLE `dosen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `dosen` (`dosen_id`, `nama_dosen`, `alamat_dosen`, `tlp_dosen`, `pen_id`) VALUES
-(1,	'Chandra Wirawan',	'Depok, Jawa Barat',	'081200000000',	3),
-(3,	'Aldy',	'Bekasi',	'081300000000',	3);
+(1,	'Chandra Wirawan',	'Depok, Jawa Barat',	'081200000000',	4);
 
 DROP TABLE IF EXISTS `jadwal`;
 CREATE TABLE `jadwal` (
@@ -34,19 +33,23 @@ CREATE TABLE `jadwal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `jadwal` (`jadwal_id`, `hari`, `jam_id`, `dosen_id`, `kelas_id`, `matakuliah_id`, `ruangan_id`) VALUES
-(2,	'Selasa',	4,	3,	4,	3,	6),
-(3,	'Senin',	2,	1,	2,	2,	2);
+(2,	'Senin',	3,	1,	1,	1,	1);
 
 DROP TABLE IF EXISTS `jam_kuliah`;
 CREATE TABLE `jam_kuliah` (
   `jam_id` int(12) NOT NULL AUTO_INCREMENT,
-  `jamkuliah` varchar(55) NOT NULL,
+  `jam_mulai` varchar(55) NOT NULL,
+  `jam_selesai` varchar(55) NOT NULL,
   PRIMARY KEY (`jam_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `jam_kuliah` (`jam_id`, `jamkuliah`) VALUES
-(2,	'11.05 - 11.55'),
-(4,	'12.45 - 13.35');
+INSERT INTO `jam_kuliah` (`jam_id`, `jam_mulai`, `jam_selesai`) VALUES
+(1,	'11:28 AM',	'12:55 PM'),
+(2,	'9:35 AM',	'10:10 AM'),
+(3,	'8:00 AM',	'8:40 AM'),
+(4,	'10:25 AM',	'11:05 AM'),
+(5,	'1:05 PM',	'1:45 PM'),
+(6,	'1:45 PM',	'2:25 PM');
 
 DROP TABLE IF EXISTS `kelas`;
 CREATE TABLE `kelas` (
@@ -59,8 +62,8 @@ CREATE TABLE `kelas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `kelas` (`kelas_id`, `nama_kelas`, `prodi_id`, `semester`, `tahun_akademik`) VALUES
-(2,	'MICE - A',	2,	'II',	'2020 - 2021'),
-(4,	'ABT - B',	7,	'V',	'2021 - 2022');
+(1,	'MICE - A',	8,	'II',	'2021 - 2022'),
+(2,	'ABT - B',	2,	'II',	'2021 - 2022');
 
 DROP TABLE IF EXISTS `matakuliah`;
 CREATE TABLE `matakuliah` (
@@ -72,8 +75,8 @@ CREATE TABLE `matakuliah` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `matakuliah` (`matakuliah_id`, `nama_matakuliah`, `semester`, `sks`) VALUES
-(2,	'Pengantar Teknologi Informasi ',	'I',	'2'),
-(3,	'Web Design',	'VI',	'3');
+(1,	'Pengantar Teknologi Informasi',	'II',	'2'),
+(3,	'Object Oriented Analysis and Design',	'II',	'2');
 
 DROP TABLE IF EXISTS `pendidikan`;
 CREATE TABLE `pendidikan` (
@@ -83,9 +86,10 @@ CREATE TABLE `pendidikan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `pendidikan` (`pen_id`, `nama_pen`) VALUES
-(2,	'S1 Teknik Informatika'),
-(3,	'S1 Sistem Informasi'),
-(4,	'S1 Ilmu Komputer');
+(1,	'S1 Teknik Informatika'),
+(2,	'S2 Ilmu Komputer'),
+(3,	'S1 Teknik Elektro'),
+(4,	'S1 Sistem Informasi');
 
 DROP TABLE IF EXISTS `prodi`;
 CREATE TABLE `prodi` (
@@ -95,11 +99,13 @@ CREATE TABLE `prodi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `prodi` (`prodi_id`, `nama_prodi`) VALUES
+(1,	'Teknik Multimedia dan Jaringan'),
 (2,	'Teknik Informatika'),
-(3,	'Teknik Multimedia dan Jaringan'),
-(4,	'Teknik Multimedia Digital'),
+(4,	'Teknik Elektro'),
 (5,	'Teknik Komputer dan Jaringan'),
-(7,	'MICE');
+(6,	'Teknik Multimedia dan Digital'),
+(7,	'Teknik Mesin'),
+(8,	'MICE');
 
 DROP TABLE IF EXISTS `ruangan`;
 CREATE TABLE `ruangan` (
@@ -109,10 +115,10 @@ CREATE TABLE `ruangan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `ruangan` (`ruangan_id`, `ruangan_nama`) VALUES
-(2,	'115'),
+(1,	'115'),
+(2,	'GSG 1'),
 (3,	'109'),
-(4,	'306'),
-(6,	'GSG 1');
+(4,	'306');
 
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -124,6 +130,6 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `user` (`id`, `nama`, `username`, `password`) VALUES
-(1,	'Aldycky Bagus Witjaksana',	'admin',	'21232f297a57a5a743894a0e4a801fc3');
+(1,	'Aldy',	'admin',	'21232f297a57a5a743894a0e4a801fc3');
 
--- 2021-11-08 15:33:04
+-- 2021-12-06 15:30:08

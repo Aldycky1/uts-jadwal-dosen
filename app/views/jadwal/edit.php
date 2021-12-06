@@ -42,7 +42,7 @@
                 <?php foreach ($data['jam_kuliah'] as $row) : ?>
                   <option value="<?= $row['jam_id']; ?>" <?php if ($data['jadwal']['jam_id'] == $row['jam_id']) {
                                                             echo "selected";
-                                                          } ?>><?= $row['jamkuliah']; ?></option>
+                                                          } ?>><?= $row['jam_mulai']; ?> - <?= $row['jam_selesai']; ?></option>
                 <?php endforeach; ?>
               </select>
             </div>

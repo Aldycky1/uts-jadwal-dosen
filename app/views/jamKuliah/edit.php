@@ -20,12 +20,31 @@
         <!-- /.card-header -->
         <!-- form start -->
         <form role="form" action="<?= base_url; ?>/jamKuliah/updateJamKuliah" method="POST" enctype="multipart/form-data">
-
           <input type="hidden" name="jam_id" value="<?= $data['jam_kuliah']['jam_id']; ?>">
           <div class="card-body">
             <div class="form-group">
-              <label>Jam Kuliah</label>
-              <input type="text" class="form-control" name="jamkuliah" value="<?= $data['jam_kuliah']['jamkuliah']; ?>">
+              <label>Waktu Mulai</label>
+              <div class="input-group time" id="timepicker-1">
+                <input class="form-control" name="jam_mulai" value="<?= $data['jam_kuliah']['jam_mulai']; ?>" />
+                <span class="input-group-append input-group-addon">
+                  <span class="input-group-text">
+                    <i class="fa fa-clock">
+                    </i>
+                  </span>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Waktu Selesai</label>
+              <div class="input-group time" id="timepicker-2">
+                <input class="form-control" name="jam_selesai" value="<?= $data['jam_kuliah']['jam_selesai']; ?>" />
+                <span class="input-group-append input-group-addon">
+                  <span class="input-group-text">
+                    <i class="fa fa-clock">
+                    </i>
+                  </span>
+                </span>
+              </div>
             </div>
           </div>
           <!-- /.card-body -->

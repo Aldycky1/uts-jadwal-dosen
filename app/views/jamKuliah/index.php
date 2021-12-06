@@ -38,7 +38,6 @@
                     <a class="btn btn-outline-danger" href="<?= base_url; ?>/jamKuliah">Reset</a>
                   </div>
                 </div>
-
               </div>
             </div>
           </form>
@@ -55,7 +54,7 @@
               <?php foreach ($data['jam_kuliah'] as $row) : ?>
                 <tr>
                   <td><?= $no; ?></td>
-                  <td><?= $row['jamkuliah']; ?></td>
+                  <td><?= $row['jam_mulai']; ?> - <?= $row['jam_selesai']; ?></td>
                   <td>
                     <a href="<?= base_url; ?>/jamKuliah/edit/<?= $row['jam_id'] ?>" class="badge badge-info ">Edit</a> <a href="<?= base_url; ?>/jamKuliah/hapus/<?= $row['jam_id'] ?>" class="badge badge-danger" onclick="return confirm('Hapus data?');">Hapus</a>
                   </td>

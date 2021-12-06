@@ -94,7 +94,7 @@
             <td><?= $no; ?></td>
             <td><?= $row['hari']; ?></td>
             <td>
-              <div class="badge badge-warning"><?= $row['jamkuliah']; ?></div>
+              <div class="badge badge-warning"><?= $row['jam_mulai']; ?> - <?= $row['jam_selesai']; ?></div>
             </td>
             <td>
               <div class="badge badge-warning"><?= $row['semester']; ?></div>

@@ -39,7 +39,7 @@
               <select class="form-control" name="jam_id">
                 <option value="">Pilih</option>
                 <?php foreach ($data['jam_kuliah'] as $row) : ?>
-                  <option value="<?= $row['jam_id']; ?>"><?= $row['jamkuliah']; ?></option>
+                  <option value="<?= $row['jam_id']; ?>"><?= $row['jam_mulai']; ?> - <?= $row['jam_selesai']; ?></option>
                 <?php endforeach; ?>
               </select>
             </div>
