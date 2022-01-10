@@ -30,6 +30,14 @@
               <input type="text" class="form-control" placeholder="masukkan alamat dosen..." name="alamat_dosen">
             </div>
             <div class="form-group">
+              <label>Tanggal Lahir Dosen</label>
+              <div class='input-group date' id='datetimepicker'>
+                <input type='date' class="form-control" name="tgl_lahir" />
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                </span>
+              </div>
+            </div>
+            <div class="form-group">
               <label>No. Telp</label>
               <input type="text" class="form-control" placeholder="masukkan nomor telepon..." name="tlp_dosen">
             </div>

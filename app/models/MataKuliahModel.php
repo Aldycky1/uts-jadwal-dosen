@@ -18,6 +18,13 @@ class MataKuliahModel
 		return $this->db->resultSet();
 	}
 
+	public function getCountMataKuliah()
+	{
+		$this->db->query("SELECT COUNT(matakuliah_id) AS jml_matkul FROM " . $this->table);
+		return $this->db->resultSet();
+	}
+
+
 	public function getMataKuliahById($id)
 	{
 		$this->db->query('SELECT * FROM ' . $this->table . ' WHERE matakuliah_id=:matakuliah_id');

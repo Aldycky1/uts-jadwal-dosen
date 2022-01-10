@@ -21,11 +21,21 @@ class Dosen extends Controller
 		$this->view('dosen/index', $data);
 		$this->view('templates/footer');
 	}
+
 	public function lihatlaporan()
 	{
 		$data['title'] = 'Data Laporan Dosen';
 		$data['dosen'] = $this->model('DosenModel')->getAllDosen();
 		$this->view('dosen/lihatlaporan', $data);
+	}
+
+	public function lihatchart()
+	{
+		$data['title'] = 'Data Laporan Dosen';
+		$data['SSatu'] = $this->model('DosenModel')->getAllSSatu();
+		$data['SDua'] = $this->model('DosenModel')->getAllSDua();
+		$data['STiga'] = $this->model('DosenModel')->getAllSTiga();
+		$this->view('dosen/lihatchart', $data);
 	}
 
 	public function laporan()

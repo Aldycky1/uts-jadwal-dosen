@@ -22,6 +22,7 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js'></script>
 <script src="<?= base_url; ?>/dist/js/timepicker.js"></script>
+<script src="<?= base_url; ?>/dist/js/datepicker.js"></script>
 
 </body>
 

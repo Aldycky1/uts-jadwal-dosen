@@ -11,6 +11,9 @@
   <!-- Load paper.css for happy printing -->
   <link rel="stylesheet" href="<?= base_url ?>/dist/css/paper.css">
 
+  <!-- Chart -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
   <!-- Set page size here: A5, A4 or A3 -->
   <!-- Set also "landscape" if you need -->
   <style type="text/css" media="print">
@@ -37,30 +40,6 @@
       font-size: 14px;
       -webkit-print-color-adjust: exact;
     }
-
-    .table {
-      border: solid 1px #DDEEEE;
-      border-collapse: collapse;
-      border-spacing: 0;
-      font: normal 13px Arial, sans-serif;
-      width: 100%;
-    }
-
-    .table thead th {
-      background-color: #DDEFEF;
-      border: solid 1px #DDEEEE;
-      color: #336B6B;
-      padding: 10px;
-      text-align: left;
-      text-shadow: 1px 1px 1px #fff;
-    }
-
-    .table tbody td {
-      border: solid 1px #DDEEEE;
-      color: #333;
-      padding: 10px;
-      text-shadow: 1px 1px 1px #fff;
-    }
   </style>
 </head>
 
@@ -74,32 +53,48 @@
   <section class="sheet padding-15mm">
     <h1 class="center" style="text-decoration: underline;margin-top: 20px;"><?= $data['title'] ?></h1>
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th style="width: 10px">#</th>
-          <th>Nama Dosen</th>
-          <th>Alamat Dosen</th>
-          <th>No. Telp</th>
-          <th>Pendidikan</th>
-        </tr>
-      </thead>
-      <tbody>
-        <?php $no = 1; ?>
-        <?php foreach ($data['dosen'] as $row) : ?>
-          <tr>
-            <td><?= $no; ?></td>
-            <td><?= $row['nama_dosen']; ?></td>
-            <td><?= $row['alamat_dosen']; ?></td>
-            <td><?= $row['tlp_dosen']; ?></td>
-            <td>
-              <div class="badge badge-warning"><?= $row['nama_pen']; ?></div>
-            </td>
-          </tr>
-        <?php $no++;
-        endforeach; ?>
-      </tbody>
-    </table>
+    <?php $noX = 1; ?>
+    <?php foreach ($data['SSatu'] as $rowX) : ?>
+    <?php $noX++;
+    endforeach; ?>
+
+    <?php $noY = 1; ?>
+    <?php foreach ($data['SDua'] as $rowY) : ?>
+    <?php $noY++;
+    endforeach; ?>
+
+    <?php $noZ = 1; ?>
+    <?php foreach ($data['STiga'] as $rowZ) : ?>
+    <?php $noZ++;
+    endforeach; ?>
+
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+    <script>
+      var xValues = ["S1", "S2", "S3"];
+      var yValues = [<?= $rowX['jml_S1']; ?>, <?= $rowY['jml_S2']; ?>, <?= $rowZ['jml_S3']; ?>];
+      var barColors = ["red", "green", "blue"];
+
+      new Chart("myChart", {
+        type: "bar",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+          legend: {
+            display: false
+          },
+          title: {
+            display: true,
+            text: "Jenjang Pendidikan Terakhir Dosen"
+          }
+        }
+      });
+    </script>
   </section>
   <script type="text/javascript">
     //  window.print();

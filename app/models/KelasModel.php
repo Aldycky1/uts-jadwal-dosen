@@ -18,6 +18,12 @@ class KelasModel
 		return $this->db->resultSet();
 	}
 
+	public function getCountKelas()
+	{
+		$this->db->query("SELECT COUNT(kelas_id) AS jml_kelas FROM " . $this->table);
+		return $this->db->resultSet();
+	}
+
 	public function getKelasById($id)
 	{
 		$this->db->query('SELECT * FROM ' . $this->table . ' WHERE kelas_id=:kelas_id');

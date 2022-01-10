@@ -32,6 +32,15 @@
               <input type="text" class="form-control" name="alamat_dosen" value="<?= $data['dosen']['alamat_dosen']; ?>">
             </div>
             <div class="form-group">
+              <label>Tanggal Lahir Dosen</label>
+              <div class='input-group date' id='datetimepicker'>
+                <input type='date' class="form-control" name="tgl_lahir" value="<?= $data['dosen']['tgl_lahir']; ?>" />
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
+                </span>
+              </div>
+            </div>
+
+            <div class="form-group">
               <label>No. Telp</label>
               <input type="text" class="form-control" name="tlp_dosen" value="<?= $data['dosen']['tlp_dosen']; ?>">
             </div>

@@ -18,6 +18,13 @@ class RuanganModel
 		return $this->db->resultSet();
 	}
 
+	public function getCountRuangan()
+	{
+		$this->db->query("SELECT COUNT(ruangan_id) AS jml_ruangan FROM " . $this->table);
+		return $this->db->resultSet();
+	}
+
+
 	public function getRuanganById($id)
 	{
 		$this->db->query('SELECT * FROM ' . $this->table . ' WHERE ruangan_id=:ruangan_id');
