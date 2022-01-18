@@ -28,7 +28,7 @@
               <div class="icon">
                 <i class="fas fa-chalkboard-teacher"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?= base_url; ?>/dosen" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -44,7 +44,7 @@
               <div class="icon">
                 <i class="fas fa-university"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?= base_url; ?>/kelas" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -60,7 +60,7 @@
               <div class="icon">
                 <i class="fas fa-book"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?= base_url; ?>/matakuliah" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -76,7 +76,7 @@
               <div class="icon">
                 <i class="fas fa-map-marker-alt"></i>
               </div>
-              <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="<?= base_url; ?>/ruangan" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -141,6 +141,16 @@
                 title: {
                   display: true,
                   text: "Jenjang Pendidikan Terakhir Dosen"
+                },
+                maintainAspectRatio: {
+                  boolean: true,
+                },
+                scales: {
+                  yAxes: [{
+                    ticks: {
+                      min: 0
+                    }
+                  }]
                 }
               }
             });

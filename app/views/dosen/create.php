@@ -31,11 +31,7 @@
             </div>
             <div class="form-group">
               <label>Tanggal Lahir Dosen</label>
-              <div class='input-group date' id='datetimepicker'>
-                <input type='date' class="form-control" name="tgl_lahir" />
-                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                </span>
-              </div>
+              <input id="bday" class="form-control" onblur="calculateDays()" type="date" name="tgl_lahir">
             </div>
             <div class="form-group">
               <label>No. Telp</label>

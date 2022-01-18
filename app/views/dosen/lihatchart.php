@@ -91,6 +91,13 @@
           title: {
             display: true,
             text: "Jenjang Pendidikan Terakhir Dosen"
+          },
+          scales: {
+            yAxes: [{
+              ticks: {
+                min: 0
+              }
+            }]
           }
         }
       });

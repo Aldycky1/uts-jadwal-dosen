@@ -64,7 +64,8 @@ class Dosen extends Controller
 
 		$pdf->SetFont('Arial', 'B', 10);
 		$pdf->Cell(50, 6, 'DOSEN', 1);
-		$pdf->Cell(60, 6, 'ALAMAT', 1);
+		$pdf->Cell(35, 6, 'ALAMAT', 1);
+		$pdf->Cell(25, 6, 'TGL LAHIR', 1);
 		$pdf->Cell(40, 6, 'NO. TELP', 1);
 		$pdf->Cell(35, 6, 'PENDIDIKAN', 1);
 		$pdf->Ln();
@@ -72,7 +73,8 @@ class Dosen extends Controller
 
 		foreach ($data['dosen'] as $row) {
 			$pdf->Cell(50, 6, $row['nama_dosen'], 1);
-			$pdf->Cell(60, 6, $row['alamat_dosen'], 1);
+			$pdf->Cell(35, 6, $row['alamat_dosen'], 1);
+			$pdf->Cell(25, 6, $row['tgl_lahir'], 1);
 			$pdf->Cell(40, 6, $row['tlp_dosen'], 1);
 			$pdf->Cell(35, 6, $row['nama_pen'], 1);
 			$pdf->Ln();
