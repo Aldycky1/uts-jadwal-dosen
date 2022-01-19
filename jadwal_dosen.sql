@@ -12,13 +12,17 @@ CREATE TABLE `dosen` (
   `dosen_id` int(12) NOT NULL AUTO_INCREMENT,
   `nama_dosen` varchar(55) NOT NULL,
   `alamat_dosen` varchar(80) NOT NULL,
+  `tgl_lahir` varchar(15) NOT NULL,
   `tlp_dosen` varchar(15) NOT NULL,
   `pen_id` int(12) NOT NULL,
   PRIMARY KEY (`dosen_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `dosen` (`dosen_id`, `nama_dosen`, `alamat_dosen`, `tlp_dosen`, `pen_id`) VALUES
-(1,	'Chandra Wirawan',	'Depok, Jawa Barat',	'081200000000',	4);
+INSERT INTO `dosen` (`dosen_id`, `nama_dosen`, `alamat_dosen`, `tgl_lahir`, `tlp_dosen`, `pen_id`) VALUES
+(1,	'Aldycky Bagus',	'Bekasi',	'2000-10-20',	'082100000000',	2),
+(2,	'Aldy',	'Bekasi',	'2000-10-20',	'081200000000',	3),
+(3,	'Naoto Sato',	'äº•é«˜ç”ºæ¾æœ¬1-9-4',	'1998-02-06',	'081300000000',	1),
+(4,	'Hertta Kukkala',	'Essikaarto 63 883',	'1981-10-13',	'045-5165215',	2);
 
 DROP TABLE IF EXISTS `jadwal`;
 CREATE TABLE `jadwal` (
@@ -33,7 +37,7 @@ CREATE TABLE `jadwal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `jadwal` (`jadwal_id`, `hari`, `jam_id`, `dosen_id`, `kelas_id`, `matakuliah_id`, `ruangan_id`) VALUES
-(2,	'Senin',	3,	1,	1,	1,	1);
+(1,	'Kamis',	2,	1,	2,	1,	2);
 
 DROP TABLE IF EXISTS `jam_kuliah`;
 CREATE TABLE `jam_kuliah` (
@@ -49,7 +53,7 @@ INSERT INTO `jam_kuliah` (`jam_id`, `jam_mulai`, `jam_selesai`) VALUES
 (3,	'8:00 AM',	'8:40 AM'),
 (4,	'10:25 AM',	'11:05 AM'),
 (5,	'1:05 PM',	'1:45 PM'),
-(6,	'1:45 PM',	'2:25 PM');
+(6,	'2:45 PM',	'5:25 PM');
 
 DROP TABLE IF EXISTS `kelas`;
 CREATE TABLE `kelas` (
@@ -86,10 +90,9 @@ CREATE TABLE `pendidikan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `pendidikan` (`pen_id`, `nama_pen`) VALUES
-(1,	'S1 Teknik Informatika'),
-(2,	'S2 Ilmu Komputer'),
-(3,	'S1 Teknik Elektro'),
-(4,	'S1 Sistem Informasi');
+(1,	'S1'),
+(2,	'S2'),
+(3,	'S3');
 
 DROP TABLE IF EXISTS `prodi`;
 CREATE TABLE `prodi` (
@@ -132,4 +135,4 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`id`, `nama`, `username`, `password`) VALUES
 (1,	'Aldy',	'admin',	'21232f297a57a5a743894a0e4a801fc3');
 
--- 2021-12-06 15:30:08
+-- 2022-01-19 07:24:17
